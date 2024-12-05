@@ -242,7 +242,16 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.view-cart-button,
+.view-cart-button {
+  padding: 0px 63px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #db7b0e; /* Green color */
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+}
 .pay-now-button {
     padding: 10px 80px;
     margin: 10px;

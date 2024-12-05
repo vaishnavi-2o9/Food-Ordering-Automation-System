@@ -24,11 +24,21 @@
 
             <div class="dips-selection">
                 <h3>Add Dips</h3>
-                <label><input type="checkbox" value="Ketchup"> Ketchup   | 15/-</label><br>
-                <label><input type="checkbox" value="Mustard"> Mustard   | 15/-</label><br>
-                <label><input type="checkbox" value="BBQ Sauce"> BBQ Sauce   | 15/-</label><br>
-                <label><input type="checkbox" value="Ranch"> Ranch   | 15/-</label><br>
+                <label><input type="checkbox" id="productCheckbox" onclick="toggleQuantity()" value="Ketchup"> Ketchup   | 5/-</label> <div id="quantitySection" style="display: none;">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <span id="quantity">0</span>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div><br>
+                <label><input type="checkbox" id="productCheckbox" onclick="toggleQuantity()" value="Mustard"> Mustard   | 5/-</label> <div id="quantitySection" style="display: none;">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <span id="quantity">0</span>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div><br>
+                <label><input type="checkbox" id="productCheckbox" onclick="toggleQuantity()" value="BBQ Sauce"> BBQ Sauce   | 5/-</label><br>
+                <label><input type="checkbox" id="productCheckbox" onclick="toggleQuantity()" value="Ranch"> Ranch   | 5/-</label><br>
             </div>
+
+           
         
             <div class="drinks-selection">
                 <h3>Select a Drink</h3>
