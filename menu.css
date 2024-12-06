@@ -1,0 +1,245 @@
+
+body {
+    font-family: 'Barriecito', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  header {
+    padding: 20px;
+    background-color: #fff; /* White background for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Positioning context for absolute positioning inside */
+  }
+
+  h1 {
+    margin: 0 0 10px; /* Margin below the heading */
+    font-size: 60px; /* Reduced font size for the heading */
+    text-align: left; /* Center the heading */
+    font-family:'Barriecito', cursive; ;
+  margin-left: 20%;
+  color:#db7b0e;
+  }
+
+  .dishes-header h1 {
+    font-size: 2.5em;
+    color: #333;
+    max-width: 75%;
+  }
+  
+  .dishes-images {
+    display: flex;
+    flex-direction: row; /* Stack items horizontally */
+    align-items: flex-start; /* Align items at the start */
+    gap: 20px; /* Space between items */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    width: 65%; /* Set the width of the dishes images container to 50% */
+    position: absolute; /* Positioning to place it in the corner */
+    top: 180px; /* Adjust this value based on your header height */
+    right: 20px; /* Distance from the right edge */
+    margin: 0; /* Remove margin to avoid centering */
+  }
+  
+  .dishes-image {
+    display: flex;
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center align items */
+    border: 1px solid #ddd; /* Light border around each dishes */
+    border-radius: 10px; /* Rounded corners for each dishes */
+    padding: 10px; /* Padding inside each dishes card */
+    background-color: #f9f9f9; /* Light background for each dishes card */
+    transition: transform 0.2s; /* Transition for scaling effect */
+    width: 210px; /* Fixed width for dishes cards */
+  }
+  
+  .dishes-image img {
+    width: 100%; /* Make image responsive to the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .dishes-image img:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  }
+  
+  .dishes-image .details {
+    font-size: 0.9em; /* Font size for details */
+    color: #777; /* Text color for details */
+    margin-top: 10px; /* Space between image and details */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .dishes-images {
+      width: 100%; /* Full width on smaller screens */
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center; /* Center align items */
+      position: relative; /* Reset position for smaller screens */
+      top: auto; /* Reset top positioning */
+      right: auto; /* Reset right positioning */
+    }
+  
+    .dishes-image {
+      width: 90%; /* Make dishes cards wider on small screens */
+    }
+  }
+  .menu {
+    width:410px; /* Set width to 30% of the screen */
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px; /* Padding around the menu */
+    position: fixed; /* Fix the menu on the left side */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+   
+  }
+  
+  .menu h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  .menu ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+  }
+  
+  .menu li {
+    margin: 10px 0; /* Space between menu items */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .Menu-item {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .Menu-image {
+    width: 100px; /* Set a fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .Menu-text {
+    margin-left: 10px; /* Space between image and text */
+    font-size: 18px; /* Font size for text */
+  }
+  
+  /* Hover effects */
+  .menu li:hover {
+    transform: scale(1.05); /* Scale up the list item */
+  }
+  
+  .Menu-item:hover .Menu-image {
+    transform: scale(1.1); /* Scale up the image */
+  }
+  
+  .Menu-item:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+    border-radius: 5px; /* Rounded corners */
+  }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Set a default font */
+  }
+  
+  .header-controls {
+    position: fixed; /* Fix the header at the top */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    width: 66%; /* Set width to 75% of the screen */
+    background-color: #fff; /* Background color */
+    padding: 10px; /* Padding for better spacing */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  .Menu-header {
+    margin-top: 60px; /* Add top margin to avoid overlap with fixed header */
+    width: 75%; /* Set width to 75% of the screen */
+    margin-left: auto; /* Center align the header */
+    margin-right: auto; /* Center align the header */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .Menu-images {
+    display: flex; /* Use flexbox for horizontal alignment */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+  }
+  
+  .Menu-image {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 200px; /* Set a fixed width for each Menu image */
+    margin-right: 10px; /* Space between images */
+    scroll-snap-align: start; /* Align items to the start */
+    text-align: center; /* Center text below images */
+  }
+  
+  .Menu-image img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+  
+  .details {
+    display: block; /* Make details a block element */
+    margin-top: 5px; /* Space above details */
+  }
+  
+  /* Additional styles for the back button and search container */
+  .back-button {
+    position: fixed; /* Fix the position */
+    top: 80px; /* Space from the top */
+    right: 40px; /* Space from the right */
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* Remove border */
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+  }
+  
+  .search-container {
+    position: fixed; /* Fix the position */
+    top: 20px; /* Space from the top */
+    left: 20px; /* Space from the left */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure it stays above other content */
+  }
+  
+  #search {
+    padding: 10px; /* Padding for the input field */
+    border: 1px solid #ccc; /* Border for input */
+    border-radius: 4px; /* Rounded corners */
+    width: 200px; /* Set width for the input */
+    margin-right: 10px; /* Space between the input and button */
+  }
+  
+  #search-button {
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* Remove border */
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  #search-button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+  }
