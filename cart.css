@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Barriecito', cursive;
     margin: 0;
@@ -11,46 +12,48 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     position: relative; /* Positioning context for absolute positioning inside */
   }
+
   h1 {
     margin: 0 0 10px; /* Margin below the heading */
     font-size: 60px; /* Reduced font size for the heading */
     text-align: left; /* Center the heading */
     font-family:'Barriecito', cursive; ;
-  margin-left: 40%;
+  margin-left: 20%;
   color:#db7b0e;
   }
-  .burger-header h1 {
+
+  .dishes-header h1 {
     font-size: 2.5em;
     color: #333;
     max-width: 75%;
   }
   
-  .burger-images {
+  .dishes-images {
     display: flex;
     flex-direction: row; /* Stack items horizontally */
     align-items: flex-start; /* Align items at the start */
     gap: 20px; /* Space between items */
     flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-    width: 65%; /* Set the width of the burger images container to 50% */
+    width: 65%; /* Set the width of the dishes images container to 50% */
     position: absolute; /* Positioning to place it in the corner */
     top: 180px; /* Adjust this value based on your header height */
     right: 20px; /* Distance from the right edge */
     margin: 0; /* Remove margin to avoid centering */
   }
   
-  .burger-image {
+  .dishes-image {
     display: flex;
     flex-direction: column; /* Stack image and details vertically */
     align-items: center; /* Center align items */
-    border: 1px solid #ddd; /* Light border around each burger */
-    border-radius: 10px; /* Rounded corners for each burger */
-    padding: 10px; /* Padding inside each burger card */
-    background-color: #f9f9f9; /* Light background for each burger card */
+    border: 1px solid #ddd; /* Light border around each dishes */
+    border-radius: 10px; /* Rounded corners for each dishes */
+    padding: 10px; /* Padding inside each dishes card */
+    background-color: #f9f9f9; /* Light background for each dishes card */
     transition: transform 0.2s; /* Transition for scaling effect */
-    width: 180px; /* Fixed width for burger cards */
+    width: 210px; /* Fixed width for dishes cards */
   }
   
-  .burger-image img {
+  .dishes-image img {
     width: 100%; /* Make image responsive to the container */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners for images */
@@ -58,12 +61,12 @@ body {
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
   }
   
-  .burger-image img:hover {
+  .dishes-image img:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
   }
   
-  .burger-image .details {
+  .dishes-image .details {
     font-size: 0.9em; /* Font size for details */
     color: #777; /* Text color for details */
     margin-top: 10px; /* Space between image and details */
@@ -71,7 +74,7 @@ body {
   
   /* Media queries for responsiveness */
   @media (max-width: 768px) {
-    .burger-images {
+    .dishes-images {
       width: 100%; /* Full width on smaller screens */
       flex-direction: column; /* Stack items vertically on small screens */
       align-items: center; /* Center align items */
@@ -80,18 +83,12 @@ body {
       right: auto; /* Reset right positioning */
     }
   
-    .burger-image {
-      width: 90%; /* Make burger cards wider on small screens */
+    .dishes-image {
+      width: 90%; /* Make dishes cards wider on small screens */
     }
   }
-  
-  
-  
-  
-   
-  
   .menu {
-    width: 30%; /* Set width to 30% of the screen */
+    width:410px; /* Set width to 30% of the screen */
     background-color: #f8f9fa; /* Light background color */
     padding: 20px; /* Padding around the menu */
     position: fixed; /* Fix the menu on the left side */
@@ -100,40 +97,55 @@ body {
     height: 100%; /* Full height */
     overflow-y: auto; /* Allow vertical scrolling if needed */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+   
   }
   
   .menu h2 {
-    margin-top: 0; /* Remove top margin */
-    font-size: 24px; /* Font size for the heading */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
   }
   
   .menu ul {
-    list-style-type: none; /* Remove bullets */
+    list-style-type: none; /* Remove bullet points */
     padding: 0; /* Remove padding */
   }
   
   .menu li {
-    margin: 15px 0; /* Space between menu items */
+    margin: 10px 0; /* Space between menu items */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
   }
   
-  .menu a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Text color */
-  }
-  
-  .burger-item {
+  .Menu-item {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
   }
   
-  .burger-image {
-    width: 50px; /* Set a fixed width for images */
+  .Menu-image {
+    width: 100px; /* Set a fixed width for images */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
   }
   
-  .burger-text {
-    font-size: 18px; /* Font size for item text */
+  .Menu-text {
+    margin-left: 10px; /* Space between image and text */
+    font-size: 18px; /* Font size for text */
+  }
+  
+  /* Hover effects */
+  .menu li:hover {
+    transform: scale(1.05); /* Scale up the list item */
+  }
+  
+  .Menu-item:hover .Menu-image {
+    transform: scale(1.1); /* Scale up the image */
+  }
+  
+  .Menu-item:hover {
+    background-color: #e0e0e0; /* Change background color on hover */
+    border-radius: 5px; /* Rounded corners */
   }
   body {
     margin: 0;
@@ -151,7 +163,7 @@ body {
     z-index: 1000; /* Ensure it stays above other content */
   }
   
-  .burger-header {
+  .Menu-header {
     margin-top: 60px; /* Add top margin to avoid overlap with fixed header */
     width: 75%; /* Set width to 75% of the screen */
     margin-left: auto; /* Center align the header */
@@ -159,21 +171,21 @@ body {
     overflow: hidden; /* Hide overflow */
   }
   
-  .burger-images {
+  .Menu-images {
     display: flex; /* Use flexbox for horizontal alignment */
     overflow-x: auto; /* Allow horizontal scrolling */
     scroll-snap-type: x mandatory; /* Snap scrolling */
   }
   
-  .burger-image {
+  .Menu-image {
     flex: 0 0 auto; /* Prevent flex items from shrinking */
-    width: 200px; /* Set a fixed width for each burger image */
+    width: 200px; /* Set a fixed width for each Menu image */
     margin-right: 10px; /* Space between images */
     scroll-snap-align: start; /* Align items to the start */
     text-align: center; /* Center text below images */
   }
   
-  .burger-image img {
+  .Menu-image img {
     width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Optional: rounded corners */
@@ -231,7 +243,7 @@ body {
   #search-button:hover {
     background-color: #0056b3; /* Darker color on hover */
   }
-  .cart-section {
+.cart-section {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -256,5 +268,5 @@ body {
 
 .view-cart-button:hover,
 .pay-now-button:hover {
-    background-color: #db7b0e; /* Darker green on hover */
+    background-color: #db7b0e; /* Darker green on hover */
 }
