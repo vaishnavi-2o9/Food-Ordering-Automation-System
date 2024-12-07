@@ -25,3 +25,8 @@ function openNewWindow() {
         console.error("No URL mapped for this image.");
     }
 }
+
+//when we click on images the new page open
+function openNewWindow() {
+    window.location.href = 'bprize.html'; // Replace with your target HTML page
+}
