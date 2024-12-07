@@ -22,7 +22,7 @@ function openNewWindow() {
 
     // Agar URL mile, toh us page par redirect karein
     if (redirectUrl) {
-        window.location.href = "cart.html";
+        window.location.href = "bprize.html";
     } else {
         console.error("No URL mapped for this image.");
     }
