@@ -1,13 +1,5 @@
 
 
-// //to next page
-// const image = document.getElementById('image');
-
-//  image.addEventListener('click',()=>
-//     {
-//     window.location.href = 'cart.html'
-//     });
-
 function openNewWindow() {
     // Aapke requirement ke hisaab se nayi window/URL open karna
     const urlMapping = {
