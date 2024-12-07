@@ -1,24 +1,29 @@
+
+
 function openNewWindow() {
-    window.open('bprize.html', '_blank'); // Opens bprize.html in a new tab/window
+    // Aapke requirement ke hisaab se nayi window/URL open karna
+    const urlMapping = {
+        "burger.jpeg": "burgerDetails.html",
+        "cheeseburger.jpeg": "cheeseBurgerDetails.html",
+        "veggie burger.webp": "veggieBurgerDetails.html",
+        "chilli cheese burger.jpg": "chilliCheeseBurgerDetails.html",
+        "avocado bacon burger.jpg": "avocadoBaconBurgerDetails.html",
+        "bbq bacon burger.jpeg": "bbqBaconBurgerDetails.html",
+        "mushroom swiss burger.jpg": "mushroomSwissBurgerDetails.html",
+        "burger.webp": "oldFashionBurgerDetails.html",
+        "double cheeseburger.jpeg": "doubleCheeseBurgerDetails.html"
+    };
+
+    // Image element jo click hua hai, use event ke through identify karna
+    const clickedImage = event.target.src.split('/').pop(); // image ka naam extract karna
+
+    // URL mapping se matching URL lena
+    const redirectUrl = urlMapping[clickedImage];
+
+    // Agar URL mile, toh us page par redirect karein
+    if (redirectUrl) {
+        window.location.href = "cart.html";
+    } else {
+        console.error("No URL mapped for this image.");
+    }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('search');
-    const burgerImages = document.querySelectorAll('.burger-image');
-
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-
-        burgerImages.forEach(burger => {
-            const burgerAltText = burger.querySelector('img').alt.toLowerCase();
-            if (burgerAltText.includes(searchTerm)) {
-                burger.parentElement.style.display = 'block'; // Show the burger
-            } else {
-                burger.parentElement.style.display = 'none'; // Hide the burger
-            }
-        });
-    });
-});
-document.getElementById('backButton').onclick = function() {
-    window.history.back();
-};
