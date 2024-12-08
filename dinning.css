@@ -1,6 +1,10 @@
+.background {
+    background-image: url('background.jpg'); /* Replace with your image path */
+   
+}
 .overlay {
-    position: absolute;
-    top: 35%;
+    position: fixed;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -21,22 +25,23 @@
 }
 
 body {
+    position: absolute;
     margin: 0;
     padding: 0;
-    height: 300vh; /* Use full height of the viewport */
+    height: 350vh; 
     display: flex;
-    flex-direction: column;
-    background-color: #f7f7f7;
+    background-image: url('food\ \(2\).jpg');
 }
 h2{
-    font-size: 60px;
+    position: fixed;
+   left: 34%;
+    font-size: 80px;
     text-align: center;
-    justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   font-family: "Pacifico", cursive;
+  font-family: "Pacifico", cursive;
    color: #db7b0e;
+   
    font-weight: bold;
+
 }
 .container {
     position: fixed; /* or use absolute if you want it relative to a parent */
