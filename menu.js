@@ -45,3 +45,9 @@ document.getElementById('search-button').addEventListener('click', function() {
         }
     });
 });
+
+// prize page
+function navigateToPage(pages) {
+    window.location.href = pages; // Redirects to the specified page in the same window
+}
+
