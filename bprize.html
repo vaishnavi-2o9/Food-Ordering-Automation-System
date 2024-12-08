@@ -24,12 +24,43 @@
 
             <div class="dips-selection">
                 <h3>Add Dips</h3>
-                <label><input type="checkbox" value="Ketchup"> Ketchup   | 15/-</label><br>
-                <label><input type="checkbox" value="Mustard"> Mustard   | 15/-</label><br>
-                <label><input type="checkbox" value="BBQ Sauce"> BBQ Sauce   | 15/-</label><br>
-                <label><input type="checkbox" value="Ranch"> Ranch   | 15/-</label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyKetchup"> Ketchup | 15/-
+                    <div id="qtyKetchup" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyKetchupValue')">-</button>
+                        <span id="qtyKetchupValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyKetchupValue')">+</button>
+                    </div>
+                </div>
+                </label><br>
+                <label>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyMustard"> Mustard | 15/-
+                    <div id="qtyMustard" class="quantity-bar" style="display: none;">
+                    <button class="dip-btn" onclick="decrement('qtyMustardValue')">-</button>
+                    <span id="qtyMustardValue">1</span>
+                    <button class="dip-btn" onclick="increment('qtyMustardValue')">+</button>
+                    </div>
+                </label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyBBQSauce"> BBQ Sauce | 15/-
+                    <div id="qtyBBQSauce" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyBBQSauceValue')">-</button>
+                        <span id="qtyBBQSauceValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyBBQSauceValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyRanch"> Ranch | 15/-
+                    <div id="qtyRanch" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyRanchValue')">-</button>
+                        <span id="qtyRanchValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyRanchValue')">+</button>
+                    </div>
+                </div>
+                </label><br>
             </div>
         
+
             <div class="drinks-selection">
                 <h3>Select a Drink</h3>
                 <label><input type="checkbox" value="Soda"> Soda   | 15/-</label><br>
