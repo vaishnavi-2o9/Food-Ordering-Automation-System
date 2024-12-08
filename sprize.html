@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sprize.css">
+    <title>Menu</title>
+</head>
+<body>
+    <button class="back-button" id="backButton">Back</button>
+    <div class="container">
+        <h1 class="menu-title">Order Your Meal</h1>
+        
+        <div class="order-menu">
+            <div class="Sandwich-selection">
+                <h3>Sandwich</h3>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('classic', -1)">-</button>
+                    <span id="classic-quantity">1</span>
+                    <button class="quantity-btn" onclick="changeQuantity('classic', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="dips-selection">
+                <h3>Add Dips</h3>
+                <label><input type="checkbox" value="Red Chutney"> Red Chutney   | 20/-</label><br>
+                <label><input type="checkbox" value="Green Chutney"> Green Chutney  | 20/-</label><br>
+                <label><input type="checkbox" value="Schezwan Chutney"> Schezwan Chutney  | 25/-</label><br>
+                <label><input type="checkbox" value="Tomato Chutney">Tomato Chutney    | 25/-</label><br>
+            </div>
+        
+            <div class="drinks-selection">
+                <h3>Select a Drink</h3>
+                <label><input type="checkbox" value="Water"> Water   | 30/-</label><br>
+                <label><input type="checkbox" value="Soda"> Soda   | 30/-</label><br>
+                <label><input type="checkbox" value="Juice"> Juice   | 50/-</label><br>
+                <label><input type="checkbox" value="Coldrink"> Coldrink  | 60/-</label><br>
+            </div>
+        
+            <button class="done-button" onclick="finishOrder()">Done</button>
+        </div>
+    </div>
+    <script src="sprize.js"></script>
+</body>
+</html>

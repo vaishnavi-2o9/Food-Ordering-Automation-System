@@ -243,3 +243,82 @@ body {
   #search-button:hover {
     background-color: #0056b3; /* Darker color on hover */
   }
+  .keyboard {
+  
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Full width */
+  padding: 10px; /* Optional padding */
+  background-color: #f0f0f0; /* Optional background color */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+  display: flex; /* Use flexbox for rows */
+  justify-content: center; /* Center buttons in each row */
+  width: 100%; /* Full width */
+  margin: 10px 0; /* Margin between rows */
+}
+
+button {
+  color: #000;
+  width: 55px; /* Default button width */
+  height: 55px; /* Default button height */
+  border: none;
+  background: #db7b0e;
+  box-shadow: 5px 5px 10px #474343, -5px -5px 10px #fff;
+  font-size: 20px;
+  margin: 0 5px; /* Margin between buttons */
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20%;
+  transition: box-shadow 0.2s; /* Smooth transition for active state */
+}
+
+button:active {
+  box-shadow: 1px 1px 2px #fff8f8, -1px -1px 2px #474343;
+}
+
+.back {
+  width: 115px; /* Backspace button width */
+  border-radius: 10px;
+}
+
+.tab {
+  width: 80px; /* Tab button width */
+  border-radius: 10px;
+}
+
+.slace {
+  width: 92px; /* Backslash button width */
+  border-radius: 10px;
+}
+
+.cap {
+  width: 100px; /* Corrected from 100x to 100px */
+  border-radius: 10px;
+}
+
+.ent-btn {
+  width: 135px; /* Enter button width */
+  border-radius: 10px;
+}
+
+.shift {
+  width: 150px; /* Shift button width */
+  border-radius: 10px;
+}
+
+.other {
+  width: 82px; /* Other modifier keys width */
+  border-radius: 10px;
+}
+
+.space {
+  width: 406px; /* Space button width */
+  border-radius: 10px;
+}
+
+
