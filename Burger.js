@@ -27,3 +27,7 @@ function openNewWindow() {
         console.error("No URL mapped for this image.");
     }
 }
+
+function openNewWindow() {
+    window.location.href = 'bprize.html'; // Same window me redirect karega
+}

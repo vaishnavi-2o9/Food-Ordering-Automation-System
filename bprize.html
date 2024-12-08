@@ -32,10 +32,39 @@
         
             <div class="drinks-selection">
                 <h3>Select a Drink</h3>
-                <label><input type="checkbox" value="Soda"> Soda   | 15/-</label><br>
-                <label><input type="checkbox" value="Water"> Water   | 15/-</label><br>
-                <label><input type="checkbox" value="Juice"> Juice   | 15/-</label><br>
-                <label><input type="checkbox" value="Tea"> Tea   | 15/-</label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtySoda"> Soda | 15/-
+                    <div id="qtySoda" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtySodaValue')">-</button>
+                        <span id="qtySodaValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtySodaValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyJuice"> Juice | 15/-
+                    <div id="qtyJuice" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyJuiceValue')">-</button>
+                        <span id="qtyJuiceValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyJuiceValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyWater"> Water | 15/-
+                    <div id="qtyWater" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyWaterValue')">-</button>
+                        <span id="qtyWaterValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyWaterValue')">+</button>
+                    </div>
+
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyTea"> Tea | 15/-
+                    <div id="qtyTea" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyTeaValue')">-</button>
+                        <span id="qtyTeaValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyTeaValue')">+</button>
+                    </div>
+                </div></label><br>
             </div>
         
             <button class="done-button" onclick="finishOrder()">Done</button>
