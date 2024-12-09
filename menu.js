@@ -30,6 +30,8 @@ function openNewWindow() {
 function openNewWindow() {
     window.location.href = 'bprize.html'; // Replace with your target HTML page
 } 
+
+//for search button
 document.getElementById('search-button').addEventListener('click', function() {
     const searchQuery = document.getElementById('search').value.toLowerCase();
     const allImages = document.querySelectorAll('.dishes-image');

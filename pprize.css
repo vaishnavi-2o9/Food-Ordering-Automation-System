@@ -59,7 +59,32 @@ h3 {
     transform: scale(1.1); /* Scale up on hover */
 }
 
-.dips-selection, .drinks-selection {
+.dipCheckbox{
+    accent-color:#db7b0e ;
+}
+
+
+.dip-btn{
+    background-color: #db7b0e; /* Button background color */
+    color: white;
+    border: none;
+    padding: 0px 4px;
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+
+}
+
+
+.dips-selection{
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+.drinks-selection {
     margin-bottom: 20px;
     text-align: left; /* Align labels to the left */
 }
