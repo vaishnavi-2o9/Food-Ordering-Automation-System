@@ -1,9 +1,9 @@
 //for back button
 document.getElementById("backButton").onclick = function() {
     window.history.back();
-};
+}; 
 
-//for pizza quantity
+//for momos quantity
 function changeQuantity(itemId, change) {
     const quantityElement = document.getElementById(`${itemId}-quantity`);
     let currentQuantity = parseInt(quantityElement.textContent, 10);
