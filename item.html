@@ -3,16 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Burger.css">
-    <title>Your Cart</title>
+    <title>Your Cart Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .item h2 {
+            margin: 0;
+        }
+        .item p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Your Cart</h1>
+        <h1>Your Cart Items</h1>
         <button onclick="window.history.back();">Back</button>
     </header>
-    <div id="cart-items"></div>
-    <div id="total-price"></div>
-    <script src="Cart.js"></script>
+    <main>
+        <div id="cartItems"></div>
+    </main>
+
+    <script>
+        function displayCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || {
+                burgers: {},
+                dips: {},
+                drinks: {},
+                prizes: {}
+            };
+
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = ''; // Clear previous items
+
+            // Function to create item elements
+            function createItemElement(title, items) {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                const itemTitle = document.createElement('h2');
+                itemTitle.textContent = title;
+                itemDiv.appendChild(itemTitle);
+
+                for (const [name, quantity] of Object.entries(items)) {
+                    const itemDetail = document.createElement('p');
+                    itemDetail.textContent = `${name}: ${quantity}`;
+                    itemDiv.appendChild(itemDetail);
+                }
+
+                return itemDiv;
+            }
+
+            // Display burgers
+            if (Object.keys(cart.burgers).length > 0) {
+                cartItemsDiv.appendChild(createItemElement('Burgers', cart.burgers));
+            }
+
+            // Display dips
+            if (Object.keys(cart.dips).length > 0) {
+                cartItemsDiv.appendChild(createItemElement('Dips', cart.dips));
+            }
+
+            // Display drinks
+            if (Object.keys(cart.drinks).length > 0) {
+                cartItemsDiv.appendChild(createItemElement('Drinks', cart.drinks));
+            }
+
+            // Display prizes
+            if (Object.keys(cart.prizes).length > 0) {
+                cartItemsDiv.appendChild(createItemElement('Prizes', cart.prizes));
+            }
+
+            // If the cart is empty
+            if (cartItemsDiv.innerHTML === '') {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+            }
+        }
+
+        // Call the function to display cart items when the page loads
+        window.onload = displayCartItems;
+    </script>
 </body>
 </html>

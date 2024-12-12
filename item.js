@@ -1,31 +1,30 @@
-function displayItems() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const itemListContainer = document.getElementById('item-list');
-    const totalPriceContainer = document.getElementById('total-price');
+const cart = JSON.parse(localStorage.getItem('cart'));
+const cartItemsDiv = document.getElementById('cartItems');
 
-    // Clear previous items
-    itemListContainer.innerHTML = '';
-    let totalPrice = 0;
-
-    // Check if the cart is empty
-    if (cart.length === 0) {
-        itemListContainer.innerHTML = '<p>Your cart is empty.</p>';
-        totalPriceContainer.innerHTML = '';
-        return;
+if (cart) {
+    // Display burgers
+    if (Object.keys(cart.burgers).length > 0) {
+        cartItemsDiv.innerHTML += `<h3>Burgers</h3>`;
+        for (const [burger, quantity] of Object.entries(cart.burgers)) {
+            cartItemsDiv.innerHTML += `<p>${burger}: ${quantity}</p>`;
+        }
     }
 
-    // Display each item in the cart
-    cart.forEach(item => {
-        const itemElement = document.createElement('div');
-        const itemTotalPrice = item.price * item.quantity; // Calculate total price for this item
-        itemElement.textContent = `${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotalPrice.toFixed(2)}`;
-        itemListContainer.appendChild(itemElement);
-        totalPrice += itemTotalPrice; // Add to total price
-    });
+    // Display dips
+    if (Object.keys(cart.dips).length > 0) {
+        cartItemsDiv.innerHTML += `<h3>Dips</h3>`;
+        for (const [dip, quantity] of Object.entries(cart.dips)) {
+            cartItemsDiv.innerHTML += `<p>${dip}: ${quantity}</p>`;
+        }
+    }
 
-    // Display total price
-    totalPriceContainer.innerHTML = `<h3>Total Price: $${totalPrice.toFixed(2)}</h3>`;
+    // Display drinks
+    if (Object.keys(cart.drinks).length > 0) {
+        cartItemsDiv.innerHTML += `<h3>Drinks</h3>`;
+        for (const [drink, quantity] of Object.entries(cart.drinks)) {
+            cartItemsDiv.innerHTML += `<p>${drink}: ${quantity}</p>`;
+        }
+    }
+} else {
+    cartItemsDiv.innerHTML = `<p>Your cart is empty.</p>`;
 }
-
-// Call the function to display items when the page loads
-window.onload = displayItems;
