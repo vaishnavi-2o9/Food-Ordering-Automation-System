@@ -83,5 +83,5 @@ function finishOrder() {
   });
 
   // Open item.html to display cart
-  window.open('item.html', '_blank');
+  window.open('cart.html', '_blank');
 }
