@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     const keyboard = document.getElementById("keyboard");
     const inputs = document.querySelectorAll("input[type='text']");
@@ -85,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-=======
 document.addEventListener("DOMContentLoaded", () => {
     const keyboard = document.getElementById("keyboard");
     const inputs = document.querySelectorAll("input[type='text']");
@@ -172,4 +170,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
->>>>>>> dbb7dc2609d2cd34728694a58f58ed2fceb97c1f
