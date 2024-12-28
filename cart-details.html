@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Products in Your Cart</h2>
+
+<div id="cart-details">
+    <ul id="cart-items"></ul>
+</div>
+
+<!-- Save Cart Button -->
+<button id="saveButton">Save Cart</button>
+
+<!-- Back to Shopping Button -->
+<button onclick="goBack()">Back to Shopping</button>
+</body>
+</html>
+<script> 
+    // Retrieve cart data from localStorage on page load
+window.onload = function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+
+    if (Object.keys(cart).length === 0) {
+        document.getElementById('cart-items').innerHTML = '<li>Your cart is empty.</li>';
+    } else {
+        let cartItemsList = document.getElementById('cart-items');
+        
+        // Loop through the cart object and display products with quantities
+        for (let product in cart) {
+            let listItem = document.createElement('li');
+            listItem.innerText = `${product}: ${cart[product]}`;
+            cartItemsList.appendChild(listItem);
+        }
+    }
+};
+
+// Function to save cart to localStorage
+document.getElementById("saveButton").addEventListener("click", function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    
+    if (Object.keys(cart).length === 0) {
+        alert("Your cart is empty.");
+    } else {
+        // Save cart to localStorage (this could also be done earlier, but this simulates saving)
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert("Cart saved successfully!");
+    }
+});
+
+// Function to go back to the shopping page
+function goBack() {
+    window.location.href = 'cart.html'; // Assuming your main shopping page is index.html
+}
+
+</script>
