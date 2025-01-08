@@ -217,35 +217,7 @@ body {
   background-color: #0056b3; 
 }
 
-.search-container {
-  position: fixed; 
-  top: 20px;
-  left: 20px; 
-  display: flex; 
-  align-items: center; 
-  z-index: 1000;
-}
 
-#search {
-  padding: 10px; 
-  border: 1px solid #ccc;
-  border-radius: 4px; 
-  width: 200px;
-  margin-right: 10px; 
-}
-
-#search-button {
-  padding: 10px 15px; 
-  border: none; 
-  background-color: #007BFF; 
-  color: white; 
-  border-radius: 4px; 
-  cursor: pointer; 
-}
-
-#search-button:hover {
-  background-color: #0056b3; 
-}
 .add-to-cart {
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
