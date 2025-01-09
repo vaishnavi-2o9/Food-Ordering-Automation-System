@@ -1,41 +1,35 @@
-//for back button
-document.getElementById("backButton").onclick = function() {
-    window.history.back();
+// Back button functionality
+document.getElementById("backButton").onclick = function () {
+  window.history.back();
 };
 
-//for burger quantity
+// Burger quantity functionality
 function changeQuantity(itemId, change) {
-const quantityElement = document.getElementById(`${itemId}-quantity`);
+  const quantityElement = document.getElementById(`${itemId}-quantity`);
+  let currentQuantity = parseInt(quantityElement.textContent, 10);
+  let newQuantity = currentQuantity + change;
 
-// Get the current quantity as a number
-let currentQuantity = parseInt(quantityElement.textContent, 10);
+  // Ensure the quantity does not go below 1
+  if (newQuantity < 1) {
+    newQuantity = 1;
+  }
 
-// Update the quantity
-let newQuantity = currentQuantity + change;
-
-// Ensure the quantity does not go below 1
-if (newQuantity < 1) {
-  newQuantity = 1;
+  // Update the DOM with the new quantity
+  quantityElement.textContent = newQuantity;
 }
 
-// Update the DOM with the new quantity
-quantityElement.textContent = newQuantity;
-}
-
-
-//for checkbox quantity
-// Function to toggle the visibility of quantity bars
+// Checkbox quantity functionality
 document.querySelectorAll('.dipCheckbox').forEach((checkbox) => {
   checkbox.addEventListener('change', function () {
-      const quantityId = this.getAttribute('data-quantity-id');
-      const quantityDiv = document.getElementById(quantityId);
+    const quantityId = this.getAttribute('data-quantity-id');
+    const quantityDiv = document.getElementById(quantityId);
 
-      // Show or hide the quantity bar based on checkbox state
-      if (this.checked) {
-          quantityDiv.style.display = 'block';
-      } else {
-          quantityDiv.style.display = 'none';
-      }
+    // Show or hide the quantity bar based on checkbox state
+    if (this.checked) {
+      quantityDiv.style.display = 'block';
+    } else {
+      quantityDiv.style.display = 'none';
+    }
   });
 });
 
@@ -53,9 +47,11 @@ function decrement(quantitySpanId) {
 
   // Ensure quantity doesn't go below 1
   if (currentQuantity > 1) {
-      quantitySpan.innerText = currentQuantity - 1;
+    quantitySpan.innerText = currentQuantity - 1;
   }
 }
+
+// Cart management
 let cart = JSON.parse(localStorage.getItem('cart')) || {
   burgers: {},
   dips: {},
@@ -65,23 +61,44 @@ let cart = JSON.parse(localStorage.getItem('cart')) || {
 
 function addToCart(itemType, itemName, quantity) {
   if (!cart[itemType][itemName]) {
-      cart[itemType][itemName] = 0;
+    cart[itemType][itemName] = 0;
   }
   cart[itemType][itemName] += quantity;
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+// Finish order functionality
 function finishOrder() {
+  // Collect burgers
+  const burgerQuantities = document.querySelectorAll('[id$="-quantity"]');
+  burgerQuantities.forEach(quantityElement => {
+    const itemId = quantityElement.id.replace('-quantity', '');
+    const quantity = parseInt(quantityElement.textContent, 10);
+    if (quantity > 0) {
+      addToCart('burgers', itemId, quantity);
+    }
+  });
+
+  // Collect dips
+  const dipCheckboxes = document.querySelectorAll('.dipCheckbox');
+  dipCheckboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+      const dipId = checkbox.getAttribute('data-quantity-id');
+      const dipQuantity = parseInt(document.getElementById(dipId).innerText, 10);
+      addToCart('dips', checkbox.nextSibling.textContent.trim(), dipQuantity);
+    }
+  });
+
   // Collect prizes
   const prizeCheckboxes = document.querySelectorAll('.prizeCheckbox');
   prizeCheckboxes.forEach(checkbox => {
-      if (checkbox.checked) {
-          const prizeId = checkbox.getAttribute('data-quantity-id');
-          const prizeQuantity = parseInt(document.getElementById(prizeId + 'Value').innerText);
-          addToCart('prizes', checkbox.nextSibling.textContent.trim(), prizeQuantity);
-      }
+    if (checkbox.checked) {
+      const prizeId = checkbox.getAttribute('data-quantity-id');
+      const prizeQuantity = parseInt(document.getElementById(prizeId + 'Value').innerText);
+      addToCart('prizes', checkbox.nextSibling.textContent.trim(), prizeQuantity);
+    }
   });
 
-  // Open item.html to display cart
+  // Open cart.html in a new window
   window.open('cart.html', '_blank');
 }
