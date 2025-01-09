@@ -14,63 +14,116 @@
         <div class="header-controls">
             <h1>Food Factory</h1>
             <button class="back-button" onclick="window.history.back();">Back</button>
-           
+            <a href="viewcart.php" class="view-cart">View Cart</a>
         </div>
         <div class="cake-header">
         
           
             <div class="cake-images">
                 <div class="cake-image">
+               
                     
                     <img src="chocolate cake.jpg" alt=" chocolate cake" onclick="openNewWindow()">
                     <span class="details">Chocolate cake  |  Price: $5.99</span>
-                    <button class="add-to-cart" onclick="addToCart('Chocolate Cake', 5.99)">Add to Cart</button>
+                    <form action="add_to_cart.php" method="post">
+                       
+                            <input type="hidden" name="item_name" value="Chocolate Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
+                    
                 </div>
                 <div class="cake-image">
                     <img src="vanila cake.jpg" alt="vanila cake" onclick="openNewWindow()">
                     <span class="details">Vanila cake | Price: $6.49</span>
-                    <button class="add-to-cart" onclick="addToCart('Vanila Cake', 5.99)">Add to Cart</button>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value=" Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="red velvet cake.jpg" alt="red velvet cake" onclick="openNewWindow()">
                     <span class="details">Red velvet cake |  Price: $4.99</span>
-                    <button class="add-to-cart" onclick="addToCart('red velvet cake Cake', 5.99)">Add to Cart</button>
+                    <form action="add_to_cart.php" method="post">
+                       
+                            <input type="hidden" name="item_name" value="Red velvet Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="carrot cake.jpg" alt="carrot cake" onclick="openNewWindow()">
                     <span class="details">Carrot cake | Price: $5.49</span>
-                    <button class="add-to-cart" onclick="addToCart('Carrot Cake', 5.99)">Add to Cart</button>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Carrot Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="cheesecake.jpg" alt="cheesecake" onclick="openNewWindow()">
                     <span class="details">Cheesecake | Price: $5.49</span>
-                    <button class="add-to-cart" onclick="addToCart('Cheese Cake', 5.99)">Add to Cart</button>
+                    
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Cheese Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="Bundit cake.webp" alt="Bundit cake" onclick="openNewWindow()">
                     <span class="details">Bundit cake | Price: $7.99</span>
-                    <button class="add-to-cart" onclick="addToCart('Bundit Cake', 5.99)">Add to Cart</button>
+                  
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Bumdit Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="layer cake.jpg" alt="layer cake" onclick="openNewWindow()">
                     <span class="details">Layer cake | Price: $5.99</span>
-                    <button class="add-to-cart" onclick="addToCart('layer Cake', 5.99)">Add to Cart</button>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="item_name" value="Layer Cake">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+                        
                 </div>
                 <div class="cake-image">
                     <img src="cup cake.webp" alt="cup cake" onclick="openNewWindow()">
                     <span class="details">Cupcake | Price: $5.99</span>
-                    <button class="add-to-cart" onclick="addToCart('cup Cake', 5.99)">Add to Cart</button>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Cup Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="Dark chcolate cake.jpg" alt="dark chocolate cake" onclick="openNewWindow()">
                     <span class="details">Dark chocolate cake | Price: $5.99</span>
-                    <button class="add-to-cart" onclick="addToCart('Dark chocolate Cake', 5.99)">Add to Cart</button>
+                    
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Dark Chocolate Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
                     <img src="cake.jpeg" alt=" cake" onclick="openNewWindow()">
                     <span class="details">cake Price: $5.99</span>
-                    <button class="add-to-cart" onclick="addToCart(' Cake', 6.49)">Add to Cart</button>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value=" Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
+            </div>
             </div>
             <nav class="menu">
                
