@@ -19,23 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $customerName = trim($_POST["customer_name"] ?? '');
     $customerNumber = trim($_POST["customer_number"] ?? '');
 
-<<<<<<< HEAD
-    // Validate the form data
-    $errors = [];
-    if (empty($customerName)) {
-        $errors[] = "Please enter the customer name.";
-    }
-    if (empty($customerNumber)) {
-        $errors[] = "Please enter the customer number.";
-    }
-=======
-    // Validate inpuzts
-    if (!empty($customerName) && !empty($customerNumber)) {
-        try {
-            // Create a PDO connection to the database
-            $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
->>>>>>> 8c6a493ca60c9a5ac4596293c57644e2c982d0f9
+
 
     if (!empty($errors)) {
         echo implode("<br>", $errors);
