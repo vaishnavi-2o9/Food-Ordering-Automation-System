@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $customerName = htmlspecialchars($_POST['customer_name']);
     $customerNumber = htmlspecialchars($_POST['customer_number']);
 
-    // Validate inputs
+    // Validate inpuzts
     if (!empty($customerName) && !empty($customerNumber)) {
         try {
             // Create a PDO connection to the database
