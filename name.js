@@ -84,30 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+function validateForm() {
+    var customerName = document.getElementById('customer_name').value.trim();
+    var customerNumber = document.getElementById('customer_number').value.trim();
 
-    form.addEventListener("submit", function (event) {
-        // Prevent the form from submitting
-        event.preventDefault();
+    if (customerName === "") {
+        alert("Customer Name is required.");
+        return false;
+    }
 
-        // Get form inputs
-        const customerName = document.getElementById("customer_name").value.trim();
-        const customerNumber = document.getElementById("customer_number").value.trim();
+    // Check if the customer number is empty or not a valid number
+    if (customerNumber === "" || !/^\d{10}$/.test(customerNumber)) {
+        alert("Please enter a valid 10-digit Customer Number.");
+        return false;
+    }
 
-        // Validate inputs
-        if (!customerName || !customerNumber) {
-            alert("Please fill out all fields.");
-            return;
-        }
-
-        // Validate customer number (example: must be numeric and 10 digits)
-        if (!/^\d{10}$/.test(customerNumber)) {
-            alert("Customer number must be a 10-digit number.");
-            return;
-        }
-
-        // If validation passes, submit the form
-        form.submit();
-    });
-});
+    return true;
+}

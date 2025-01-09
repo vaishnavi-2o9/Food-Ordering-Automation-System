@@ -1,51 +1,57 @@
 <?php
-// Database connection details
-$host = "localhost"; // Database host
-$dbname = "customer"; // Database name
-$username = "root"; // Database username
-$password = ""; // Database password
+// Database connection settings
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "customer";
 
-// Check if the form is submitted
+// Create a connection to the database
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check if the connection was successful
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $customerName = htmlspecialchars($_POST['customer_name']);
-    $customerNumber = htmlspecialchars($_POST['customer_number']);
+    // Get the form data
+    $customerName = trim($_POST["customer_name"] ?? '');
+    $customerNumber = trim($_POST["customer_number"] ?? '');
 
-    // Validate inputs
-    if (!empty($customerName) && !empty($customerNumber)) {
-        try {
-            // Create a PDO connection to the database
-            $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Validate the form data
+    $errors = [];
+    if (empty($customerName)) {
+        $errors[] = "Please enter the customer name.";
+    }
+    if (empty($customerNumber)) {
+        $errors[] = "Please enter the customer number.";
+    }
 
-            // Prepare SQL query to insert data into the `users` table
-            $sql = "INSERT INTO users (customer_name, customer_number) VALUES (:customer_name, :customer_number)";
-            $stmt = $conn->prepare($sql);
-
-            // Bind parameters
-            $stmt->bindParam(':customer_name', $customerName);
-            $stmt->bindParam(':customer_number', $customerNumber);
-
-            // Execute the query
-            $stmt->execute();
-
-            // Display success message
-            echo "<h2>Form Submitted Successfully!</h2>";
-            echo "<p><strong>Customer Name:</strong> $customerName</p>";
-            echo "<p><strong>Customer Number:</strong> $customerNumber</p>";
-        } catch (PDOException $e) {
-            // Display error message if database connection or query fails
-            echo "<h2>Error: " . $e->getMessage() . "</h2>";
-        } finally {
-            // Close the database connection
-            $conn = null;
-        }
+    if (!empty($errors)) {
+        echo implode("<br>", $errors);
     } else {
-        // Display error message if fields are empty
-        echo "<h2>Error: Please fill out all fields.</h2>";
+        // Prepare the SQL query to insert the form data into the database
+        $sql = "INSERT INTO users (customer_name, customer_number) VALUES (?, ?)";
+
+        // Prepare the statement
+        $stmt = $conn->prepare($sql);
+
+        // Bind the parameters
+        $stmt->bind_param("ss", $customerName, $customerNumber);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            echo "Customer data inserted successfully.";
+        } else {
+            echo "Error inserting customer data: " . $stmt->error;
+        }
+
+        // Close the statement and connection
+        $stmt->close();
+        $conn->close();
     }
 } else {
-    // Display error if the form is not submitted
-    echo "<h2>Error: Form not submitted.</h2>";
+    echo "Invalid request method.";
 }
 ?>
