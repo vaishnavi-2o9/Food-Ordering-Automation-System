@@ -1,40 +1,31 @@
-let cart = {}
-function addToCart(productName) {
-    if (cart[productName]) {
-        cart[productName]++;
-    } else {
-        cart[productName] = 1;
-    }
-    updateCartCount();
-}
-
-function updateCartCount() {
-    let count = Object.keys(cart).length;
-    document.getElementById('cart-count').innerText = count;
-}
-
 function showCart() {
-    // Save cart data to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // Get the cart contents div
+    var cartContentsDiv = document.getElementById("cart-contents");
 
-    // Redirect to a new page to display the cart details
-    window.location.href = 'cart-details.html';
+    // Toggle the display of the cart contents div
+    if (cartContentsDiv.style.display === "none" || cartContentsDiv.style.display === "") {
+        cartContentsDiv.style.display = "block";
+
+        // Send an AJAX request to get the cart contents
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "viewcart.php", true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                // Update the cart contents div with the received data
+                cartContentsDiv.innerHTML = xhr.responseText;
+            } else {
+                console.error("Failed to load cart contents");
+            }
+        };
+        xhr.send();
+    } else {
+        // Hide the cart contents div if it's already visible
+        cartContentsDiv.style.display = "none";
+    }
 }
 
-
-window.onload = function() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || {};
-
-    if (Object.keys(cart).length === 0) {
-        // If cart is empty
-        document.getElementById('empty-cart').style.display = 'block';
-    } else {
-        // Display cart items
-        let cartItemsList = document.getElementById('cart-items');
-        for (let product in cart) {
-            let listItem = document.createElement('li');
-            listItem.innerText = `${product}: ${cart[product]}`;
-            cartItemsList.appendChild(listItem);
-        }
-    }
-};
+// Function to update the cart count dynamically
+function updateCartCount(count) {
+    var cartCountSpan = document.getElementById("cart-count");
+    cartCountSpan.textContent = count;
+}
