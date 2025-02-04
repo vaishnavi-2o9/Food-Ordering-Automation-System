@@ -8,23 +8,23 @@ body {
 
 header {
   padding: 20px;
-  background-color: #db7b0e; /* White background for header */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: relative; /* Positioning context for absolute positioning inside */
+  background-color: #db7b0e; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; 
 }
 
 h1 {
-  margin: 0 0 10px; /* Margin below the heading */
-  font-size: 60px; /* Reduced font size for the heading */
-  text-align: left; /* Center the heading */
+  margin: 0 0 10px;
+  font-size: 60px; 
+  text-align: left; 
   font-family:'Barriecito', cursive; ;
 margin-left: 30%;
 color:#db7b0e;
 }
 h2{
-margin: 0 0 10px; /* Margin below the heading */
-font-size: 25px; /* Reduced font size for the heading */
-text-align: left; /* Center the heading */
+margin: 0 0 10px;
+font-size: 25px; 
+text-align: left; 
 font-family:Arial, Helvetica, sans-serif ;
 color:#db7b0e;
 margin-left: 84%;
@@ -37,218 +37,218 @@ margin-left: 84%;
 
 .dishes-images {
   display: flex;
-  flex-direction: row; /* Stack items horizontally */
-  align-items: flex-start; /* Align items at the start */
-  gap: 20px; /* Space between items */
-  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-  width: 65%; /* Set the width of the dishes images container to 50% */
-  position: absolute; /* Positioning to place it in the corner */
-  top: 180px; /* Adjust this value based on your header height */
-  right: 20px; /* Distance from the right edge */
-  margin: 0; /* Remove margin to avoid centering */
+  flex-direction: row; 
+  align-items: flex-start; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  width: 65%; 
+  position: absolute; 
+  top: 180px; 
+  right: 20px; 
+  margin: 0; 
 }
 
 .dishes-image {
   display: flex;
-  flex-direction: column; /* Stack image and details vertically */
-  align-items: center; /* Center align items */
-  border: 1px solid #ddd; /* Light border around each dishes */
-  border-radius: 10px; /* Rounded corners for each dishes */
-  padding: 10px; /* Padding inside each dishes card */
-  background-color: #f9f9f9; /* Light background for each dishes card */
-  transition: transform 0.2s; /* Transition for scaling effect */
-  width: 210px; /* Fixed width for dishes cards */
+  flex-direction: column; 
+  align-items: center; 
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+  padding: 10px; 
+  background-color: #f9f9f9; 
+  transition: transform 0.2s; 
+  width: 210px; 
 }
 
 .dishes-image img {
-  width: 100%; /* Make image responsive to the container */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Rounded corners for images */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s, box-shadow 0.3s; 
 }
 
 .dishes-image img:hover {
-  transform: scale(1.05); /* Slightly scale up on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
 .dishes-image .details {
-  font-size: 0.9em; /* Font size for details */
-  color: #777; /* Text color for details */
-  margin-top: 10px; /* Space between image and details */
-}
+  font-size: 0.9em; 
+  color: #777; 
+  margin-top: 10px;
+ }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .dishes-images {
-    width: 100%; /* Full width on smaller screens */
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: center; /* Center align items */
-    position: relative; /* Reset position for smaller screens */
-    top: auto; /* Reset top positioning */
-    right: auto; /* Reset right positioning */
+    width: 100%; 
+    flex-direction: column; 
+    align-items: center;
+    position: relative; 
+    top: auto;
+    right: auto; 
   }
 
   .dishes-image {
-    width: 90%; /* Make dishes cards wider on small screens */
+    width: 90%; 
   }
 }
 .menu {
-  width:410px; /* Set width to 30% of the screen */
-  background-color: #111; /* Light background color */
-  padding: 20px; /* Padding around the menu */
-  position: fixed; /* Fix the menu on the left side */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  height: 100%; /* Full height */
-  overflow-y: auto; /* Allow vertical scrolling if needed */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the right side */
+  width:410px; 
+  background-color: #111; 
+  padding: 20px; 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  height: 100%; 
+  overflow-y: auto; 
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
  
 }
 
 .menu h2 {
-  text-align: center; /* Center the heading */
-  margin-bottom: 20px; /* Space below the heading */
+  text-align: center; 
+  margin-bottom: 20px; 
 }
 
 .menu ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
+  list-style-type: none; 
+  padding: 0; 
 }
 
 .menu li {
-  margin: 10px 0; /* Space between menu items */
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  margin: 10px 0; 
+  transition: transform 0.3s ease; 
 }
 
 .Menu-item {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  text-decoration: none; /* Remove underline from links */
-  color: #fff; /* Text color */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  color: #fff; 
+  transition: background-color 0.3s ease; 
 }
 
 .Menu-image {
-  width: 100px; /* Set a fixed width for images */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  width: 100px; 
+  height: auto; 
+  transition: transform 0.3s ease; 
 }
 
 .Menu-text {
-  margin-left: 10px; /* Space between image and text */
-  font-size: 18px; /* Font size for text */
+  margin-left: 10px; 
+  font-size: 18px; 
 }
 
 /* Hover effects */
 .menu li:hover {
-  transform: scale(1.05); /* Scale up the list item */
+  transform: scale(1.05); 
 }
 
 .Menu-item:hover .Menu-image {
-  transform: scale(1.1); /* Scale up the image */
+  transform: scale(1.1); 
 }
 
 .Menu-item:hover {
-  background-color: #db7b0e; /* Change background color on hover */
-  border-radius: 5px; /* Rounded corners */
+  background-color: #db7b0e; 
+  border-radius: 5px;
 }
 body {
   margin: 0;
-  font-family: Arial, sans-serif; /* Set a default font */
+  font-family: Arial, sans-serif; 
 }
 
 .header-controls {
-  position: fixed; /* Fix the header at the top */
-  top: 0; /* Align to the top */
-  right: 0; /* Align to the right */
-  width: 66%; /* Set width to 75% of the screen */
-  background-color: #111; /* Background color */
-  padding: 10px; /* Padding for better spacing */
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow on the left side */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+  width: 66%; 
+  background-color: #111; 
+  padding: 10px; 
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; 
 }
 
 .Menu-header {
-  margin-top: 60px; /* Add top margin to avoid overlap with fixed header */
-  width: 75%; /* Set width to 75% of the screen */
-  margin-left: auto; /* Center align the header */
-  margin-right: auto; /* Center align the header */
-  overflow: hidden; /* Hide overflow */
+  margin-top: 60px; 
+  width: 75%; 
+  margin-left: auto; 
+  margin-right: auto; 
+  overflow: hidden; 
 }
 
 .Menu-images {
-  display: flex; /* Use flexbox for horizontal alignment */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Snap scrolling */
+  display: flex; 
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
 }
 
 .Menu-image {
-  flex: 0 0 auto; /* Prevent flex items from shrinking */
-  width: 200px; /* Set a fixed width for each Menu image */
-  margin-right: 10px; /* Space between images */
-  scroll-snap-align: start; /* Align items to the start */
-  text-align: center; /* Center text below images */
+  flex: 0 0 auto; 
+  width: 200px; 
+  margin-right: 10px; 
+  scroll-snap-align: start; 
+  text-align: center; 
 }
 
 .Menu-image img {
-  width: 100%; /* Make images responsive */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: rounded corners */
+  width: 100%; 
+  height: auto;
+  border-radius: 8px; 
 }
 
 .details {
-  display: block; /* Make details a block element */
-  margin-top: 5px; /* Space above details */
+  display: block; 
+  margin-top: 5px; 
 }
 
 /* Additional styles for the back button and search container */
 .back-button {
-  position: fixed; /* Fix the position */
-  top: 80px; /* Space from the top */
-  right: 40px; /* Space from the right */
-  padding: 10px 15px; /* Padding for the button */
-  border: none; /* Remove border */
-  background-color: #007BFF; /* Button color */
-  color: white; /* Text color */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed; 
+  top: 80px; 
+  right: 40px; 
+  padding: 10px 15px; 
+  border: none; 
+  background-color: #007BFF; 
+  color: white; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  z-index: 1000;
 }
 
 .back-button:hover {
-  background-color: #0056b3; /* Darker color on hover */
+  background-color: #0056b3; 
 }
 
 .search-container {
-  position: fixed; /* Fix the position */
-  top: 20px; /* Space from the top */
-  left: 20px; /* Space from the left */
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed; 
+  top: 20px; 
+  left: 20px; 
+  display: flex; 
+  align-items: center; 
+  z-index: 1000;
 }
 
 #search {
-  padding: 10px; /* Padding for the input field */
-  border: 1px solid #ccc; /* Border for input */
-  border-radius: 4px; /* Rounded corners */
-  width: 200px; /* Set width for the input */
-  margin-right: 10px; /* Space between the input and button */
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 200px; 
+  margin-right: 10px; 
 }
 
 #search-button {
-  padding: 10px 15px; /* Padding for the button */
-  border: none; /* Remove border */
-  background-color: #fea744; /* Button color */
-  color: white; /* Text color */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px 15px; 
+  border: none;
+  background-color: #fea744; 
+  color: white; 
+  border-radius: 4px; 
+  cursor: pointer; 
 }
 
 #search-button:hover {
-  background-color: #db7b0e; /* Darker color on hover */
+  background-color: #db7b0e; 
 }
 .keyboard {
  display: none;
@@ -256,32 +256,32 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%; /* Full width */
-padding: 10px; /* Optional padding */
-background-color: #f0f0f0; /* Optional background color */
+  width: 100%; 
+padding: 10px; 
+background-color: #f0f0f0; 
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .row {
-display: flex; /* Use flexbox for rows */
-justify-content: center; /* Center buttons in each row */
-width: 100%; /* Full width */
-margin: 10px 0; /* Margin between rows */
+display: flex; 
+justify-content: center; 
+width: 100%; 
+margin: 10px 0; 
 }
 
 button {
 color: #000;
-width: 55px; /* Default button width */
-height: 55px; /* Default button height */
+width: 55px; 
+height: 55px; 
 border: none;
 background: #db7b0e;
 box-shadow: 5px 5px 10px #474343, -5px -5px 10px #fff;
 font-size: 20px;
-margin: 0 5px; /* Margin between buttons */
+margin: 0 5px;
 outline: none;
 font-family: Arial, Helvetica, sans-serif;
 border-radius: 20%;
-transition: box-shadow 0.2s; /* Smooth transition for active state */
+transition: box-shadow 0.2s; 
 }
 
 button:active {
@@ -289,42 +289,42 @@ box-shadow: 1px 1px 2px #fff8f8, -1px -1px 2px #474343;
 }
 
 .back {
-width: 115px; /* Backspace button width */
+width: 115px; 
 border-radius: 10px;
 }
 
 .tab {
-width: 80px; /* Tab button width */
+width: 80px; 
 border-radius: 10px;
 }
 
 .slace {
-width: 92px; /* Backslash button width */
+width: 92px; 
 border-radius: 10px;
 }
 
 .cap {
-width: 100px; /* Corrected from 100x to 100px */
+width: 100px; 
 border-radius: 10px;
 }
 
 .ent-btn {
-width: 135px; /* Enter button width */
+width: 135px; 
 border-radius: 10px;
 }
 
 .shift {
-width: 150px; /* Shift button width */
+width: 150px; 
 border-radius: 10px;
 }
 
 .other {
-width: 82px; /* Other modifier keys width */
+width: 82px; 
 border-radius: 10px;
 }
 
 .space {
-width: 406px; /* Space button width */
+width: 406px; 
 border-radius: 10px;
 }
 

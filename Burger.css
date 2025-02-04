@@ -217,7 +217,7 @@ body {
 
  
  .add-to-cart {
-  background-color: #4CAF50; /* Green background */
+  background-color: #db7b0e; /* Green background */
   color: white; /* White text */
   border: none; /* Remove border */
   padding: 10px 20px; /* Add padding */
@@ -228,6 +228,6 @@ body {
 }
 
 .add-to-cart:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #db7b0e; /* Darker green on hover */
 }
  
