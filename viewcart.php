@@ -8,10 +8,47 @@ session_start(); // Start the session
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
     <style>
-        h1 { font-size: 24px; }
-        ul { font-size: 18px; }
-        h3 { font-size: 20px; }
-        button { font-size: 16px; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            font-size: 20px;
+        }
+        th {
+            background-color: #999999;
+            font-size: 24px;
+        }
+        .clear-cart-button {
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #db7b0e;
+            color: #fff;
+            cursor: pointer;
+        }
+        .clear-cart-button:hover {
+            background-color: #db7b0e;
+        }
+        .back-button {
+            font-size: 40px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #db7b0e;
+            color: #fff;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #db7b0e;
+        }
+        h1 {
+            font-size: 36px;
+        }
     </style>
 </head>
 <body>
@@ -21,23 +58,41 @@ session_start(); // Start the session
         echo "<h1>Your Cart is Empty</h1>";
     } else {
         echo "<h1>Your Cart</h1>";
-        echo "<ul>";
+        echo "<table>";
+        echo "<tr>
+                <th>Food</th>
+                <th>Price</th>
+                <th>Remove</th>
+              </tr>";
         $total = 0; // Initialize total price
 
         // Loop through each item in the cart
-        foreach ($_SESSION['cart'] as $item) {
-            echo "<li>{$item['name']} - \${$item['price']}</li>";
+        foreach ($_SESSION['cart'] as $key => $item) {
+            echo "<tr>
+                    <td>{$item['name']}</td>
+                    <td>\${$item['price']}</td>
+                    <td>
+                        <form action='remove_item.php' method='post'>
+                            <input type='hidden' name='key' value='{$key}'>
+                            <button type='submit'>&times;</button>
+                        </form>
+                    </td>
+                  </tr>";
             $total += $item['price']; // Add item price to the total
         }
 
-        echo "</ul>";
-        echo "<h3>Total: \${$total}</h3>"; // Display the total price
-
-        // Add a button to clear the cart
-        echo '<form action="clear_cart.php" method="post">
-                  <button type="submit">Clear Cart</button>
-              </form>';
+        echo "<tr>
+                <td colspan='1'>Total:</td>
+                <td>\${$total}</td>
+              </tr>";
+        echo "</table>";
+    
     }
+              echo '<form action="menu.html" method="post">
+                  <button type="submit">Back to Menu</button>
+              </form>';
+ 
+    
     ?>
 </body>
 </html>

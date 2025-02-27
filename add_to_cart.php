@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ];
 
     // Redirect back to the cake menu
-    header('Location: cake.html');
+    header('Location: cart.html');
     exit();
 }
 ?>
