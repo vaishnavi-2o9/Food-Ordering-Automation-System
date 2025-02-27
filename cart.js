@@ -29,3 +29,9 @@ function updateCartCount(count) {
     var cartCountSpan = document.getElementById("cart-count");
     cartCountSpan.textContent = count;
 }
+
+const newPageUrl = "name.html";
+
+document.getElementById("payNowButton").addEventListener("click",function(){
+    window.open(newPageUrl,"_blank");
+})
