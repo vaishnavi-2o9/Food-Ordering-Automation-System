@@ -30,8 +30,8 @@ function updateCartCount(count) {
     cartCountSpan.textContent = count;
 }
 
-const newPageUrl = "name.html";
-
-document.getElementById("payNowButton").addEventListener("click",function(){
-    window.open(newPageUrl,"_blank");
-})
+function payNow() {
+    var newWindow = window.open("name.html", "_blank");
+    newWindow.window.resizeTo(screen.width, screen.height);
+    newWindow.window.moveTo(0, 0);
+  }
