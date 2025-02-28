@@ -75,8 +75,9 @@ display: none;
     right: 0;
     width: 100%; /* Full width */
   padding: 10px; /* Optional padding */
-  background-color: #f0f0f0; /* Optional background color */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+ background-color: transparent;
+    box-shadow: 0 -2px 5px rgba(78, 76, 76, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .row {

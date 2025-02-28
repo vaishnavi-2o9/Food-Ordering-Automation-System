@@ -251,15 +251,16 @@ body {
   background-color: #db7b0e; 
 }
 .keyboard {
- display: none;
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%; 
-padding: 10px; 
-background-color: #f0f0f0; 
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Full width */
+  padding: 10px; /* Optional padding */
+  background-color: transparent;
+  box-shadow: 0 -2px 5px rgba(78, 76, 76, 0.2);
+  backdrop-filter: blur(10px); /* Add this line to make the background transparent */
 }
 
 .row {
