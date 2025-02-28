@@ -193,29 +193,24 @@ body {
   display: block; 
   margin-top: 5px; 
 }
-
-/* Additional styles for the back button and search container */
-.back-button {
-  position: fixed;
+.cart-button {
+  position: fixed; 
   top: 80px; 
   right: 40px; 
   padding: 10px 15px; 
   border: none; 
-  background-color: #007BFF; 
+  background-color: #4CAF50; 
   color: white; 
   border-radius: 4px; 
   cursor: pointer; 
   z-index: 1000; 
 }
 
-.back-button:hover {
-  background-color: #0056b3;
+.cart-button:hover {
+  background-color: #3e8e41; 
 }
 
 
-
-
- 
  .add-to-cart {
   background-color: #db7b0e; /* Green background */
   color: white; /* White text */

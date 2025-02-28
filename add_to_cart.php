@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'price' => $item_price
     ];
 
-    // Redirect back to the cake menu
-    header('Location: cart.html');
+   
+    header('Location: burger.html');
     exit();
 }
 ?>
