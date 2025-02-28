@@ -197,18 +197,18 @@ body {
   position: fixed; 
   top: 80px; 
   right: 40px; 
-  padding: 15px 15px; 
+  padding: 15px 25px; 
   border: none; 
-  background-color: #db7b0e; 
+  background-color: #000; 
   color: white; 
   border-radius: 4px; 
-  border-color: #f9f9f9;
+ 
   cursor: pointer; 
   z-index: 1000; 
 }
 
 .cart-button:hover {
-  background-color: #c25919; 
+  background-color: #db7b0e; 
 }
 
 
