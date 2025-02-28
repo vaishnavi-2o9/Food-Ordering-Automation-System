@@ -197,9 +197,9 @@ body {
   position: fixed; 
   top: 80px; 
   right: 40px; 
-  padding: 10px 15px; 
+  padding: 15px 20px; 
   border: none; 
-  background-color: #4CAF50; 
+  background-color: #db7b0e; 
   color: white; 
   border-radius: 4px; 
   cursor: pointer; 
@@ -207,7 +207,7 @@ body {
 }
 
 .cart-button:hover {
-  background-color: #3e8e41; 
+  background-color: #c25919; 
 }
 
 
