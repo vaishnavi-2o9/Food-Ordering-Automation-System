@@ -202,6 +202,7 @@ body {
   background-color: #db7b0e; 
   color: white; 
   border-radius: 4px; 
+  border-color: #f9f9f9;
   cursor: pointer; 
   z-index: 1000; 
 }
