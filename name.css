@@ -1,7 +1,10 @@
-
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
+  
+ 
+  background-repeat: no-repeat; /* don't repeat the image */
+  background-attachment: fixed; /* keep the image fixed when scrolling */
+  background-color: #f4f4f4; /* fallback color if image doesn't load */
   margin: 0;
   padding: 0;
 }
