@@ -101,3 +101,8 @@ function validateForm() {
 
     return true;
 }
+
+//After Submit Button
+document.getElementById('newpage').addEventListener('click',function(){
+    window.open('payment.html');
+});
