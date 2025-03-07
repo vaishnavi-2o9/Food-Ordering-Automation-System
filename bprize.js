@@ -56,3 +56,32 @@ function decrement(quantitySpanId) {
       quantitySpan.innerText = currentQuantity - 1;
   }
 }
+let cart = JSON.parse(localStorage.getItem('cart')) || {
+  burgers: {},
+  dips: {},
+  drinks: {},
+  prizes: {}
+};
+
+function addToCart(itemType, itemName, quantity) {
+  if (!cart[itemType][itemName]) {
+      cart[itemType][itemName] = 0;
+  }
+  cart[itemType][itemName] += quantity;
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function finishOrder() {
+  // Collect prizes
+  const prizeCheckboxes = document.querySelectorAll('.prizeCheckbox');
+  prizeCheckboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+          const prizeId = checkbox.getAttribute('data-quantity-id');
+          const prizeQuantity = parseInt(document.getElementById(prizeId + 'Value').innerText);
+          addToCart('prizes', checkbox.nextSibling.textContent.trim(), prizeQuantity);
+      }
+  });
+
+  // Open item.html to display cart
+  window.open('item.html', '_blank');
+}
