@@ -3,7 +3,7 @@ document.getElementById("backButton").onclick = function() {
     window.history.back();
 };
 
-//for burger quantity
+//for noodles quantity
 function changeQuantity(itemId, change) {
 const quantityElement = document.getElementById(`${itemId}-quantity`);
 
