@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website Code</title>
+    </head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+}
+
+.payment-options img {
+    width: 186px;
+    margin: -3px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #db7b0e;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+<body>
+    <div class="container">
+        
+        <h2>PAYMENT</h2>
+        <p>Scan the QR Code with any UPI App and pay the amount.</p>
+        <img src="qr_code.png" alt="QR Code" class="qr-code">
+        <div class="payment-options">
+            <img src="all.jpg" alt="GPay">
+            </div>
+            <form action="process_payment.php" method="post">
+        <label for="transaction-id">UTR/REFERENCE/TRANSACTION ID**</label>
+        <input type="text" id="transaction-id"  required placeholder="Enter your Transaction ID">
+        <button onclick="verifyTransaction()">Pay Now</button>
+    </form>
+    </div>
+</body>
+<script>
+    function verifyTransaction() {
+            var transactionID = document.getElementById("transaction-id").value;
+
+            if (transactionID.length > 8) { // Basic validation
+                // Redirect to success page
+                window.location.href = "success.html";
+            } else {
+                alert("Please enter a valid Transaction ID.");
+            }
+        }
+</script>
+</html>
+
+</body>
+</html>
