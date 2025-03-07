@@ -13,7 +13,7 @@
        
         <div class="header-controls">
             <h1>Food Factory</h1>
-            <button class="back-button" onclick="window.history.back();">Back</button>
+            <button class="cart-button" onclick="openNewWindow()">Cart</button>
             
         </div>
         <div class="noodle-header">
@@ -22,40 +22,94 @@
             <div class="noodle-images">
                 <div class="noodle-image">
                     
-                    <img src="vegetable hakka noodles.jpg" alt="vegetable hakk noodle" onclick="openNewWindow()">
+                    <img src="vegetable hakka noodles.jpg" alt="vegetable hakka noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable hakka noodle  |  Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Vegetable hakka noodles">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="pad thai.jpg" alt="pad thai noodle" onclick="openNewWindow()">
                     <span class="details">Pad thai Noodles | Price: $6.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Pad thai noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable lo mein.jpg" alt="vegetable lo mein noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable lo mein | Price: $4.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Vegetable lo mein noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable chow mein.jpg" alt="vegetable chow mein noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable chow mein | Price: $5.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="chow mein noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable ramen.jpg" alt="vegetable ramen noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable Ramen | Price: $5.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="ramen noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable udon.jpg" alt="vegetable udon noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable Udon |  Price: $7.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Ubon noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable soba.jpg" alt="vegetable soba noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable soba | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Soba noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable noodles with pesto sauce.jpg" alt="vegetable noodle" onclick="openNewWindow()">
                     <span class="details">Vegetable noodle with pesto Sauce | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Vegetable noodle">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="noodle-image">
                     <img src="vegetable noodle soup.jpg" alt="vegetable noodle soup" onclick="openNewWindow()">
                     <span class="details">Vegetable noodle soup | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="vegetable noodle soup">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                   </div>
                </div>
                <nav class="menu">

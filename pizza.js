@@ -1,3 +1,3 @@
 function openNewWindow() {
-    window.open('cart.html', '_blank');
-  }
+  window.open('cart.html', '_blank');
+}
