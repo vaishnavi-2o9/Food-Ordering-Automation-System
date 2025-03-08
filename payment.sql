@@ -1,5 +1,5 @@
-CREATE DATABASE food_ordering;
-USE food_ordering;
+CREATE DATABASE customer;
+USE customer;
 
 CREATE TABLE payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
