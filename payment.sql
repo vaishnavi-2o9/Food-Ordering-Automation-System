@@ -1,4 +1,4 @@
-CREATE DATABASE food_ordering;
+CREATE DATABASE customer;
 USE food_ordering;
 
 CREATE TABLE payments (
