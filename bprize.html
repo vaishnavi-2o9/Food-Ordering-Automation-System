@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bprize.css">
+    <title>Menu</title>
+</head>
+<body>
+    <button class="back-button" id="backButton">Back</button>
+    <div class="container">
+        <h1 class="menu-title">Order Your Meal</h1>
+        
+        <div class="order-menu">
+            <div class="burger-selection">
+                <h3>Burgers</h3>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('classic', -1)">-</button>
+                    <span id="classic-quantity">1</span>
+                    <button class="quantity-btn" onclick="changeQuantity('classic', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="dips-selection">
+                <h3>Add Dips</h3>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyKetchup"> Ketchup | 15/-
+                    <div id="qtyKetchup" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyKetchupValue')">-</button>
+                        <span id="qtyKetchupValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyKetchupValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyMusturd"> Musturd | 15/-
+                    <div id="qtyMusturd" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyMusturdValue')">-</button>
+                        <span id="qtyMusturdValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyMusturdValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyBBQSauce"> BBQ Sauce | 15/-
+                    <div id="qtyBBQSauce" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyBBQSauceValue')">-</button>
+                        <span id="qtyBBQSauceValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyBBQSauceValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyRanch"> Ranch | 15/-
+                    <div id="qtyRanch" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyRanchValue')">-</button>
+                        <span id="qtyRanchValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyRanchValue')">+</button>
+                    </div>
+                </div></label><br>
+            </div>
+        
+            <div class="drinks-selection">
+                <h3>Select a Drink</h3>
+                
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyJuice"> Juice | 15/-
+                    <div id="qtyJuice" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyJuiceValue')">-</button>
+                        <span id="qtyJuiceValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyJuiceValue')">+</button>
+                    </div>
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyWater"> Water | 15/-
+                    <div id="qtyWater" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyWaterValue')">-</button>
+                        <span id="qtyWaterValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyWaterValue')">+</button>
+                    </div>
+
+                </div></label><br>
+                <label><div>
+                    <input type="checkbox" class="dipCheckbox" data-quantity-id="qtyTea"> Tea | 15/-
+                    <div id="qtyTea" class="quantity-bar" style="display: none;">
+                        <button class="dip-btn" onclick="decrement('qtyTeaValue')">-</button>
+                        <span id="qtyTeaValue">1</span>
+                        <button class="dip-btn" onclick="increment('qtyTeaValue')">+</button>
+                    </div>
+                </div></label><br>
+            </div>
+        
+            <button onclick="finishOrder()">Finish Order</button>
+    </div>
+    <script src="bprize.js"></script>
+</body>
+</html>
