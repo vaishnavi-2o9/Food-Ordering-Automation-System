@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Self-Service Food Ordering</title>
+    <title>customer info</title>
     <link rel="stylesheet" href="name.css">
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Food Factory</h1>
-    <form id="order-form">
+    <form id="order-form" action="submit.php" method="POST">
         <label for="customer_name">Customer Name:</label>
         <input type="text" id="customer_name" name="customer_name" required><br><br>
         
         <label for="customer_number">Customer Number:</label>
         <input type="text" id="customer_number" name="customer_number" required><br><br>
-        
-        <button type="submit">Submit</button>
+        <div class="input_field">
+            <input type="submit" value="submit" class="btn" name="submit">
+        </div>
+       
     </form>
+
     <div class="keyboard" id="keyboard">
                 
         <div class="row one">

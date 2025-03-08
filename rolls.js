@@ -1,3 +1,3 @@
 function openNewWindow() {
-    window.location.href = 'rprize.html'; // Same window me redirect karega
-}
+    window.open('cart.html', '_blank');
+  }

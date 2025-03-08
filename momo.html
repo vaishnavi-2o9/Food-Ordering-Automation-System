@@ -13,11 +13,8 @@
        
         <div class="header-controls">
             <h1>Food Factory</h1>
-            <button class="back-button" onclick="window.history.back();">Back</button>
-            <div class="search-container">
-                <input type="text" id="search" placeholder="Search for a momo..." spellcheck="true" onclick="this.focus();">
-                <button id="search-button">Search</button>
-            </div>
+            <button class="cart-button" onclick="openNewWindow()">Cart</button>
+           
         </div>
         <div class="momo-header">
         
@@ -25,40 +22,94 @@
             <div class="momo-images">
                 <div class="momo-image">
                     
-                    <img src="steamed momo.jpg" alt="steamed momo" onclick="openNewWindow()">
+                    <img src="steamed momo.jpg" alt="steamed momo" >
                     <span class="details">Steamed momo  |  Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Steamed Momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="fried momos.jpg" alt="fried momo" onclick="openNewWindow()">
+                    <img src="fried momos.jpg" alt="fried momo" >
                     <span class="details">Fried momo | Price: $6.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Fried momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="tandoori momo.jpeg" alt="tandoori momo" onclick="openNewWindow()">
+                    <img src="tandoori momo.jpeg" alt="tandoori momo" >
                     <span class="details">Tandoori momo | Price: $4.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Tandoori momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="afghani momo.webp" alt="afghani momo" onclick="openNewWindow()">
+                    <img src="afghani momo.webp" alt="afghani momo" >
                     <span class="details">Afghani momo | Price: $5.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Afghani momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="veg schezwan momo.jpg" alt="veg schezwan momo" onclick="openNewWindow()">
+                    <img src="veg schezwan momo.jpg" alt="veg schezwan momo" >
                     <span class="details">Veg Schezwan momo | Price: $5.49</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Veg Schezwan momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="paneer momo.jpg" alt="paneer momo" onclick="openNewWindow()">
+                    <img src="paneer momo.jpg" alt="paneer momo" >
                     <span class="details">paneer momo | Price: $7.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Paneer momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="vegetable momo.png" alt="vegetable momo" onclick="openNewWindow()">
+                    <img src="vegetable momo.png" alt="vegetable momo" >
                     <span class="details">Vegetable momo Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Vegetable momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="chicken momo.jpg" alt="chicken momo" onclick="openNewWindow()">
+                    <img src="chicken momo.jpg" alt="chicken momo" >
                     <span class="details">Chicken momo | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Chicken momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
                 <div class="momo-image">
-                    <img src="chocolate momo.jpg" alt="chocolate momo" onclick="openNewWindow()">
+                    <img src="chocolate momo.jpg" alt="chocolate momo" >
                     <span class="details">Chocolate momo | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                        <input type="hidden" name="item_name" value="Chocolate momo">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
                 </div>
             </div>
             <nav class="menu">
@@ -130,80 +181,7 @@
                   </li>
               </ul>
           </nav>
-          <div class="keyboard" id="keyboard">
-                
-            <div class="row one">
-               <button>'</button>
-               <button>1</button>
-               <button>2</button>
-               <button>3</button>
-               <button>4</button>
-               <button>5</button>
-               <button>6</button>
-               <button>7</button>
-               <button>8</button>
-               <button>9</button>
-               <button>0</button>
-               <button>-</button>
-               <button>=</button>
-               <button class="back">Backspace</button>
-            </div>
-            <div class="row two">
-                <button class="tab">Tab</button>
-                <button>Q</button>
-                <button>W</button>
-                <button>E</button>
-                <button>R</button>
-                <button>T</button>
-                <button>Y</button>
-                <button>U</button>
-                <button>I</button>
-                <button>O</button>
-                <button>P</button>
-                <button>[</button>
-                <button>]</button>
-                <button class="slace">\</button>
-            </div>
-            <div class="row three">
-                <button class="cap">caps</button>
-                <button>A</button>
-                <button>S</button>
-                <button>D</button>
-                <button>F</button>
-                <button>G</button>
-                <button>H</button>
-                <button>J</button>
-                <button>K</button>
-                <button>L</button>
-                <button>;</button>
-                <button>'</button>
-                <button class="ent-btn">ENTER</button>
-            </div>
-            <div class="row four">
-                <button class="shift">Shift</button>
-                <button>Z</button>
-                <button>X</button>
-                <button>C</button>
-                <button>V</button>
-                <button>B</button>
-                <button>N</button>
-                <button>M</button>
-                <button><</button>
-                <button>></button>
-                <button>?</button>
-                <button class="shift">Shift</button>
-                 </div>
-                 <div class="row five">
-                    <button class="other">ctrl</button>
-                <button class="other">win</button>
-                <button class="other">alt</button>
-                <button class="space">space</button>
-                <button class="other">Alt</button>
-                <button class="other">win</button>
-                <button class="other">ctrl</button>
-                 </div>
-                
-                </div>
+          
         </div>
     </div>
       </div>
