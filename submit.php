@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($stmt->execute()) {
-            echo "Customer data inserted successfully.";
+            header("Location:payment.html");
         } else {
             echo "Error inserting customer data: " . $stmt->error;
         }
