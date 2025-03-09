@@ -1,21 +1,36 @@
 <?php
-include 'db_connect.php';
+// Configuration
+$successPage = 'success.html';
+$errorPage = 'error.html';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $transaction_id = $_POST['transaction_id'];
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Get the transaction ID from the form
+    $transactionID = $_POST['transaction-id'];
 
-    if (!empty($transaction_id)) {
-        $sql = "INSERT INTO payments (transaction_id) VALUES ('$transaction_id')";
+    // Basic validation
+    if (strlen($transactionID) > 8) {
+        // Verify the transaction ID (replace with your own verification logic)
+        // For demonstration purposes, we'll assume the transaction ID is valid
+        $isValid = true;
 
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Payment Recorded Successfully!'); window.location.href='payment.html';</script>";
+        if ($isValid) {
+            // Redirect to the success page
+            header('Location: ' . $successPage);
+            exit;
         } else {
-            echo "Error: " . $conn->error;
+            // Redirect to the error page
+            header('Location: ' . $errorPage);
+            exit;
         }
     } else {
-        echo "<script>alert('Please enter a valid Transaction ID'); window.history.back();</script>";
+        // Redirect to the error page
+        header('Location: ' . $errorPage);
+        exit;
     }
+} else {
+    // Redirect to the error page if the form hasn't been submitted
+    header('Location: ' . $errorPage);
+    exit;
 }
-
-$conn->close();
 ?>
