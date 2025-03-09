@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session
+session_start();
 
 // Database connection credentials
 $servername = "localhost";
@@ -12,33 +12,57 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    throw new Exception("Connection failed: " . $conn->connect_error);
 }
 
 // Check the table structure
-$sql = "DESCRIBE cart";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        echo $row['Field'] . "<br>";
+function checkTableStructure($conn, $tableName) {
+    $sql = "DESCRIBE $tableName";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        $columns = array();
+        while ($row = $result->fetch_assoc()) {
+            $columns[] = $row['Field'];
+        }
+        return $columns;
+    } else {
+        throw new Exception("No columns found in table $tableName");
     }
-} else {
-    echo "No columns found";
 }
 
 // Save cart items to the database
-foreach ($_SESSION['cart'] as $key => $item) {
-    $item_price = number_format($item['price'], 2);
-    $sql = "INSERT INTO cart (item_name, item_prize) VALUES ('{$item['name']}', '$item_price')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Cart item saved successfully";
-    } else {
-        echo "Error saving cart item: " . $conn->error;
+function saveCartItems($conn, $cartItems) {
+    if (!is_array($cartItems)) {
+        throw new Exception("Cart items must be an array");
+    }
+
+    $columns = checkTableStructure($conn, "cart");
+    if (!in_array("item_name", $columns) || !in_array("item_prize", $columns)) {
+        throw new Exception("Table structure is incorrect");
+    }
+
+    foreach ($cartItems as $key => $item) {
+        $itemPrice = number_format($item['price'], 2);
+        $sql = "INSERT INTO cart (item_name, item_prize) VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $item['name'], $itemPrice);
+        if ($stmt->execute()) {
+            echo "Cart item saved successfully";
+        } else {
+            echo "Error saving cart item: " . $conn->error;
+        }
+        $stmt->close();
     }
 }
 
-$conn->close(); // Close the database connection
+try {
+    saveCartItems($conn, $_SESSION['cart']);
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 
-header('Location: name.html');
+$conn->close();
+
+header('Location: name.php');
 exit();
 ?>
