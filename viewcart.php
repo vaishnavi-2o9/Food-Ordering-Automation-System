@@ -1,5 +1,6 @@
 <?php
 session_start(); // Start the session
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,8 +92,10 @@ session_start(); // Start the session
               echo '<form action="menu.html" method="post">
                   <button type="submit">Back to Menu</button>
               </form>';
- 
-    
+             
+              echo '<form action="save_to_cart.php" method="post">
+              <button type="submit">save to cart</button>
+          </form>';
     ?>
 </body>
 </html>
