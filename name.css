@@ -150,3 +150,56 @@ button:active {
 }
 
 
+/* Style the cart table */
+.cart-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-table th, .cart-table td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.cart-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.cart-table td {
+  padding: 10px;
+}
+
+/* Style the item name and price */
+.item-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.item-price {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Style the total row */
+.total-row {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #f0f0f0;
+}
+
+.total-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.total-price {
+  font-size: 20px;
+  color: #666;
+}

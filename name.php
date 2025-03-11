@@ -3,19 +3,7 @@
 
 session_start(); // Start the session
 
-// Database connection credentials
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "customer";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +27,7 @@ if ($conn->connect_error) {
         </div>
        
    
-        </form>
+      
 
     <div class="keyboard" id="keyboard">
                 
@@ -117,28 +105,40 @@ if ($conn->connect_error) {
             </div>
     </div>
     <script src="name.js"></script>
-    <h2>Your Cart</h2>
+
     <?php
-// Retrieve cart items from the database
-$sql = "SELECT * FROM cart ORDER BY item_name DESC LIMIT 10"; // Adjusted to a valid column
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    echo "<h2>Recently Saved Cart Items:</h2>";
-    echo "<table border='1'>";
-    echo "<tr>";
-    echo "<th>Item Name</th>";
-    echo "<th>Item Price</th>";
-    echo "</tr>";
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row['item_name'] . "</td>";
-        echo "<td>" . $row['item_prize'] . "</td>";
-        echo "</tr>";
+     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+        echo "<h1>Your Cart is Empty</h1>";
+    } else {
+        echo "<h1>Your Cart</h1>";
+        echo "<table>";
+        echo "<tr>
+                <th>Food</th>
+                <th>Price</th>
+               
+              </tr>";
+        $total = 0; // Initialize total price
+
+        // Loop through each item in the cart
+        foreach ($_SESSION['cart'] as $key => $item) {
+            echo "<tr>
+                    <td>{$item['name']}</td>
+                    <td>\${$item['price']}</td>
+                    
+                  </tr>";
+            $total += $item['price']; // Add item price to the total
+        }
+
+        echo "<tr>
+                <td colspan='1'>Total:</td>
+                <td>\${$total}</td>
+              </tr>";
+        echo "</table>";
+    
     }
-    echo "</table>";
-} else {
-    echo "No cart items found";
-}
+             
+             
 ?>
+  </form>
 </body>  
 </html>
