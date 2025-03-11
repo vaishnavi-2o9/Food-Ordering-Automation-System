@@ -104,41 +104,40 @@ session_start(); // Start the session
             
             </div>
     </div>
-    <script src="name.js"></script>
+    
 
     <?php
-     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-        echo "<h1>Your Cart is Empty</h1>";
-    } else {
-        echo "<h1>Your Cart</h1>";
-        echo "<table>";
-        echo "<tr>
-                <th>Food</th>
-                <th>Price</th>
-               
-              </tr>";
-        $total = 0; // Initialize total price
-
-        // Loop through each item in the cart
-        foreach ($_SESSION['cart'] as $key => $item) {
-            echo "<tr>
-                    <td>{$item['name']}</td>
-                    <td>\${$item['price']}</td>
-                    
-                  </tr>";
-            $total += $item['price']; // Add item price to the total
-        }
-
-        echo "<tr>
-                <td colspan='1'>Total:</td>
-                <td>\${$total}</td>
-              </tr>";
-        echo "</table>";
+// Check if the cart is empty
+if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+    echo "<h2>Your Cart is Empty</h2>";
+} else {
+    echo "<h2> your cart</h2>";
+    echo "<div class='cart-container'>";
+  
+    echo "<div class='cart-header'>";
     
+    echo "<span>Food</span>";
+    echo "<span>Price</span>";
+    echo "</div>";
+
+    // Loop through each item in the cart
+    $total = 0; // Initialize total price
+    foreach ($_SESSION['cart'] as $key => $item) {
+        echo "<div class='cart-item'>";
+        echo "<span>{$item['name']}</span>";
+        echo "<span>\${$item['price']}</span>";
+        echo "</div>";
+        $total += $item['price']; // Add item price to the total
     }
-             
-             
+
+    echo "<div class='cart-total'>";
+    echo "<span>Total:</span>";
+    echo "<span>\${$total}</span>";
+    echo "</div>";
+    echo "</div>";
+}
 ?>
-  </form>
+</form>
+<script src="name.js"></script>
 </body>  
 </html>

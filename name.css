@@ -70,17 +70,18 @@ input[type="submit"]:hover {
   background-color: #c56a0a; /* Darker shade for hover */
 }
 
-  .keyboard {
-display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%; /* Full width */
+.keyboard {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%; /* Full width */
   padding: 10px; /* Optional padding */
- background-color: transparent;
-    box-shadow: 0 -2px 5px rgba(78, 76, 76, 0.2);
-    backdrop-filter: blur(10px);
+  background-color: transparent;
+  box-shadow: 0 -2px 5px rgba(78, 76, 76, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 2; /* Add this line */
 }
 
 .row {
@@ -148,58 +149,62 @@ button:active {
   width: 406px; /* Space button width */
   border-radius: 10px;
 }
-
-
-/* Style the cart table */
-.cart-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h2 {
+  text-align: center;
+  color: #db7b0e; 
+  font-size: 2rem;
+  margin-top: 50px;
+  
 }
 
-.cart-table th, .cart-table td {
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: left;
-  font-size: 18px;
+
+body {
+  background-color: #f7f7f7;
 }
 
-.cart-table th {
-  background-color: #f0f0f0;
-  font-weight: bold;
+h2 {
+  text-align: center;
+  color: #db7b0e;
+  font-size: 2rem;
+  margin-top: 50px;
 }
 
-.cart-table td {
+.cart-container {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  border-radius: 20px;
+  left: 50%;
+  top: 62%;
+  background-color: #db7b0e;
+  
+}
+
+/* Style the cart header */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the cart item */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Style the item name and price */
-.item-name {
+/* Style the cart total */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
   font-weight: bold;
-  color: #333;
 }
 
-.item-price {
-  font-size: 18px;
-  color: #666;
-}
-
-/* Style the total row */
-.total-row {
-  font-weight: bold;
-  font-size: 20px;
-  background-color: #f0f0f0;
-}
-
-.total-label {
-  font-weight: bold;
-  color: #333;
-}
-
-.total-price {
-  font-size: 20px;
-  color: #666;
+/* Style the cart item and total text */
+.cart-item span, .cart-total span {
+  width: 50%;
 }
