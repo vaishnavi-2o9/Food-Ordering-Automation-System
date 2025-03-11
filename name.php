@@ -20,6 +20,7 @@ if ($conn->connect_error) {
 
 <!DOCTYPE html>
 <html>
+    
 <head>
     <title>customer info</title>
     <link rel="stylesheet" href="name.css">
@@ -38,6 +39,7 @@ if ($conn->connect_error) {
         </div>
        
    
+        </form>
 
     <div class="keyboard" id="keyboard">
                 
@@ -114,23 +116,29 @@ if ($conn->connect_error) {
             
             </div>
     </div>
+    <script src="name.js"></script>
     <h2>Your Cart</h2>
     <?php
 // Retrieve cart items from the database
-$sql = "SELECT * FROM cart ORDER BY item_name DESC LIMIT 2"; // Adjusted to a valid column
+$sql = "SELECT * FROM cart ORDER BY item_name DESC LIMIT 10"; // Adjusted to a valid column
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+    echo "<h2>Recently Saved Cart Items:</h2>";
+    echo "<table border='1'>";
+    echo "<tr>";
+    echo "<th>Item Name</th>";
+    echo "<th>Item Price</th>";
+    echo "</tr>";
     while($row = $result->fetch_assoc()) {
-        $cart_items[] = array(
-            'item_name' => $row['item_name'],
-            'item_prize' => $row['item_prize']
-        );
-        echo "<p>Item: " . $row['item_name'] . " - Price: " . $row['item_prize'] . "</p>";
+        echo "<tr>";
+        echo "<td>" . $row['item_name'] . "</td>";
+        echo "<td>" . $row['item_prize'] . "</td>";
+        echo "</tr>";
     }
+    echo "</table>";
 } else {
     echo "No cart items found";
 }
-    ?>
-      </form>
-</body>
+?>
+</body>  
 </html>
