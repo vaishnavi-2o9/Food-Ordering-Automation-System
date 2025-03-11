@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($stmt->execute()) {
-            echo "Customer data saved successfully<br>";
+            header("Location:index.php");
         } else {
             echo "Error inserting customer data: " . $stmt->error . "<br>";
             exit();
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Redirect to payment page
-    header("Location:payment.html");
+    header("Location:index.php");
     exit();
 } else {
     echo "Invalid request method.";
