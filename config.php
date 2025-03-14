@@ -21,7 +21,7 @@ $paypalConfig = [
 $dbConfig = [
     'host' => 'localhost',
     'username' => 'root',
-    'password' => '',
+    'password' => ' ',
     'name' => 'customer'
 ];
 

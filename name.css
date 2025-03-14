@@ -171,11 +171,11 @@ h2 {
 
 .cart-container {
   width: 350px;
-  height: 200px;
+  height: 400px;
   position: absolute;
   border-radius: 20px;
-  left: 50%;
-  top: 62%;
+  left: 0;
+  top: 0;
   background-color: #db7b0e;
   
 }
