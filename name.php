@@ -111,9 +111,9 @@ session_start(); // Start the session
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     echo "<h2>Your Cart is Empty</h2>";
 } else {
-    echo "<h2> your cart</h2>";
+   
     echo "<div class='cart-container'>";
-  
+   echo "<h2> your cart</h2>";
     echo "<div class='cart-header'>";
     
     echo "<span>Food</span>";

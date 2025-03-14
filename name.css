@@ -149,16 +149,10 @@ button:active {
   width: 406px; /* Space button width */
   border-radius: 10px;
 }
-h2 {
-  text-align: center;
-  color: #db7b0e; 
-  font-size: 2rem;
-  margin-top: 50px;
-  
-}
 
 
-body {
+
+bbody {
   background-color: #f7f7f7;
 }
 
@@ -170,14 +164,14 @@ h2 {
 }
 
 .cart-container {
-  width: 350px;
-  height: 200px;
+  width: 330px;
+  height: 350px;
   position: absolute;
   border-radius: 20px;
-  left: 0;
-  top: 0;
-  background-color: #db7b0e;
-  
+  left: 1%;
+  top: 2%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style the cart header */
@@ -185,7 +179,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   padding: 25px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #5e5346;
+  background-color: #f7f7f7;
 }
 
 /* Style the cart item */
@@ -202,9 +197,57 @@ h2 {
   justify-content: space-between;
   padding: 10px;
   font-weight: bold;
+  background-color: #f7f7f7;
 }
 
 /* Style the cart item and total text */
 .cart-item span, .cart-total span {
   width: 50%;
+}
+
+/* Style the cart bill slip */
+.cart-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.cart-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.cart-item span {
+  font-size: 1.2rem;
+}
+
+.cart-total span {
+  font-size: 1.5rem;
+}
+
+/* Corrected color combination */
+.cart-container {
+  background-color: #fff;
+}
+
+.cart-header {
+  background-color: #f7f7f7;
+}
+
+.cart-total {
+  background-color: #f7f7f7;
+}
+
+.cart-item {
+  background-color: #fff;
+}
+
+.cart-item:hover {
+  background-color: #f7f7f7;
 }
