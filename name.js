@@ -104,5 +104,5 @@ function validateForm() {
 
 //After Submit Button
 document.getElementById('newpage').addEventListener('click',function(){
-    window.open('payment.html');
+    window.open('index.php');
 });

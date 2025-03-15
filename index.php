@@ -1,34 +1,41 @@
-<?php 
-include_once 'db_connection.php'; 
-?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PayPal REST API Example</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pay with PayPal</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=AXpQ31MGnIMzRjIKYMuPxvx9D8UUyy4IyW4OndLRx5Z6Bhj8dUJwJlPYbm7cvr2AmIrj2Lu2p1yPqCzy&currency=USD"></script>
 </head>
-<body class="App">
-  <h1>How to Integrate PayPal REST API Payment Gateway in PHP</h1>
-  <div class="wrapper">
-    <?php 
-		  $results = mysqli_query($db_conn,"SELECT * FROM users where status=1");
-		  while($row = mysqli_fetch_array($results)){
-    ?>
-	    <div class="col__box">
-	      <h5><?php echo $row['name']; ?></h5>
-        <h6>Price: <span> $<?php echo $row['price']; ?> </span> </h6>
-        <form class="paypal" action="request.php" method="post" id="paypal_form">
-          <input type="hidden" name="item_number" value="<?php echo $row['id']; ?>" >
-          <input type="hidden" name="item_name" value="<?php echo $row['name']; ?>" >
-          <input type="hidden" name="amount" value="<?php echo $row['price']; ?>" >
-          <input type="hidden" name="currency_code" value="USD" >
-          <input type="submit" name="submit" value="Buy Now" class="btn__default">
-        </form>
-	    </div>
-    <?php } ?>
-  </div>
+<body>
+    <h2>Pay with PayPal</h2>
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00' // Replace with dynamic amount
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    fetch('payment_process.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(details)
+                    }).then(response => response.json())
+                      .then(data => {
+                          if (data.status === 'success') {
+                              alert('Payment Successful!');
+                          } else {
+                              alert('Payment Failed!');
+                          }
+                      });
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
 </body>
 </html>
