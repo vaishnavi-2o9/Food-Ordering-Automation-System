@@ -45,7 +45,7 @@ document.getElementById('search-button').addEventListener('click', function() {
         } else {
             image.style.display = 'none';   // Hide non-matching images
         }
-y    });
+  });
 });
 
 // prize page
