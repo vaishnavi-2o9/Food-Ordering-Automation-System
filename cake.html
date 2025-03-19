@@ -13,57 +13,116 @@
        
         <div class="header-controls">
             <h1>Food Factory</h1>
-            <button class="back-button" onclick="window.history.back();">Back</button>
-            <div class="search-container">
-                <input type="text" id="search" placeholder="Search for a cake..." spellcheck="true" onclick="this.focus();">
-                <button id="search-button">Search</button>
-            </div>
+            <button class="cart-button" onclick="openNewWindow()">Cart</button>
         </div>
         <div class="cake-header">
         
           
             <div class="cake-images">
                 <div class="cake-image">
+               
                     
-                    <img src="chocolate cake.jpg" alt=" chocolate cake" onclick="openNewWindow()">
+                    <img src="chocolate cake.jpg" alt=" chocolate cake" >
                     <span class="details">Chocolate cake  |  Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                            <input type="hidden" name="item_name" value="Chocolate Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
+                    
                 </div>
                 <div class="cake-image">
-                    <img src="vanila cake.jpg" alt="vanila cake" onclick="openNewWindow()">
+                    <img src="vanila cake.jpg" alt="vanila cake" >
                     <span class="details">Vanila cake | Price: $6.49</span>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value=" Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="red velvet cake.jpg" alt="red velvet cake" onclick="openNewWindow()">
+                    <img src="red velvet cake.jpg" alt="red velvet cake" >
                     <span class="details">Red velvet cake |  Price: $4.99</span>
+                    <form action="add_to_cart.php" method="post">
+                       
+                            <input type="hidden" name="item_name" value="Red velvet Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="carrot cake.jpg" alt="carrot cake" onclick="openNewWindow()">
+                    <img src="carrot cake.jpg" alt="carrot cake" >
                     <span class="details">Carrot cake | Price: $5.49</span>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Carrot Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="cheesecake.jpg" alt="cheesecake" onclick="openNewWindow()">
+                    <img src="cheesecake.jpg" alt="cheesecake" >
                     <span class="details">Cheesecake | Price: $5.49</span>
+                    
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Cheese Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="Bundit cake.webp" alt="Bundit cake" onclick="openNewWindow()">
+                    <img src="Bundit cake.webp" alt="Bundit cake" >
                     <span class="details">Bundit cake | Price: $7.99</span>
+                  
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Bumdit Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="layer cake.jpg" alt="layer cake" onclick="openNewWindow()">
+                    <img src="layer cake.jpg" alt="layer cake" >
                     <span class="details">Layer cake | Price: $5.99</span>
+                    <form action="add_to_cart.php" method="post">
+                        <input type="hidden" name="item_name" value="Layer Cake">
+                        <input type="hidden" name="item_price" value="5.99">
+                        <button type="submit" class="add-to-cart">Add to Cart</button>
+                </form>
+                        
                 </div>
                 <div class="cake-image">
-                    <img src="cup cake.webp" alt="cup cake" onclick="openNewWindow()">
+                    <img src="cup cake.webp" alt="cup cake" >
                     <span class="details">Cupcake | Price: $5.99</span>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Cup Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="Dark chcolate cake.jpg" alt="dark chocolate cake" onclick="openNewWindow()">
+                    <img src="Dark chcolate cake.jpg" alt="dark chocolate cake" >
                     <span class="details">Dark chocolate cake | Price: $5.99</span>
+                    
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value="Dark Chocolate Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
                 <div class="cake-image">
-                    <img src="cake.jpeg" alt=" cake" onclick="openNewWindow()">
+                    <img src="cake.jpeg" alt=" cake" >
                     <span class="details">cake Price: $5.99</span>
+                   
+                        <form action="add_to_cart.php" method="post">
+                            <input type="hidden" name="item_name" value=" Cake">
+                            <input type="hidden" name="item_price" value="5.99">
+                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                    </form>
                 </div>
+            </div>
             </div>
             <nav class="menu">
                
@@ -134,83 +193,8 @@
                     </li>
                 </ul>
             </nav>
-            <div class="keyboard" id="keyboard">
-                
-                <div class="row one">
-                   <button>'</button>
-                   <button>1</button>
-                   <button>2</button>
-                   <button>3</button>
-                   <button>4</button>
-                   <button>5</button>
-                   <button>6</button>
-                   <button>7</button>
-                   <button>8</button>
-                   <button>9</button>
-                   <button>0</button>
-                   <button>-</button>
-                   <button>=</button>
-                   <button class="back">Backspace</button>
-                </div>
-                <div class="row two">
-                    <button class="tab">Tab</button>
-                    <button>Q</button>
-                    <button>W</button>
-                    <button>E</button>
-                    <button>R</button>
-                    <button>T</button>
-                    <button>Y</button>
-                    <button>U</button>
-                    <button>I</button>
-                    <button>O</button>
-                    <button>P</button>
-                    <button>[</button>
-                    <button>]</button>
-                    <button class="slace">\</button>
-                </div>
-                <div class="row three">
-                    <button class="cap">caps</button>
-                    <button>A</button>
-                    <button>S</button>
-                    <button>D</button>
-                    <button>F</button>
-                    <button>G</button>
-                    <button>H</button>
-                    <button>J</button>
-                    <button>K</button>
-                    <button>L</button>
-                    <button>;</button>
-                    <button>'</button>
-                    <button class="ent-btn">ENTER</button>
-                </div>
-                <div class="row four">
-                    <button class="shift">Shift</button>
-                    <button>Z</button>
-                    <button>X</button>
-                    <button>C</button>
-                    <button>V</button>
-                    <button>B</button>
-                    <button>N</button>
-                    <button>M</button>
-                    <button><</button>
-                    <button>></button>
-                    <button>?</button>
-                    <button class="shift">Shift</button>
-                     </div>
-                     <div class="row five">
-                        <button class="other">ctrl</button>
-                    <button class="other">win</button>
-                    <button class="other">alt</button>
-                    <button class="space">space</button>
-                    <button class="other">Alt</button>
-                    <button class="other">win</button>
-                    <button class="other">ctrl</button>
-                     </div>
-                    
-                    </div>
-            </div>
-        </div>
-        </div>
+         </div>
+     
     </header>
     
     <script src="cake.js"></script>
