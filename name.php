@@ -125,14 +125,16 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     foreach ($_SESSION['cart'] as $key => $item) {
         echo "<div class='cart-item'>";
         echo "<span>{$item['name']}</span>";
-        echo "<span>\${$item['price']}</span>";
+        // Remove the '₹' symbol from the price
+        $price = str_replace('₹', '', $item['price']);
+        echo "<span>₹{$price}</span>";
         echo "</div>";
-        $total += $item['price']; // Add item price to the total
+        $total += intval($price); // Add item price to the total
     }
 
     echo "<div class='cart-total'>";
     echo "<span>Total:</span>";
-    echo "<span>\${$total}</span>";
+    echo "<span>₹{$total}</span>";
     echo "</div>";
     echo "</div>";
 }

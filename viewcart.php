@@ -53,7 +53,7 @@ session_start(); // Start the session
     </style>
 </head>
 <body>
-    <?php
+<?php
     // Check if the cart is empty
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         echo "<h1>Your Cart is Empty</h1>";
@@ -69,9 +69,11 @@ session_start(); // Start the session
 
         // Loop through each item in the cart
         foreach ($_SESSION['cart'] as $key => $item) {
+            // Remove the '₹' symbol from the price
+            $price = str_replace('₹', '', $item['price']);
             echo "<tr>
                     <td>{$item['name']}</td>
-                    <td>\${$item['price']}</td>
+                    <td>{$item['price']}</td>
                     <td>
                         <form action='remove_item.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -79,12 +81,14 @@ session_start(); // Start the session
                         </form>
                     </td>
                   </tr>";
-            $total += $item['price']; // Add item price to the total
+            $total += (int) $price; // Add item price to the total
         }
 
+        // Remove the '₹' symbol from the total price
+        $total = '₹' . $total;
         echo "<tr>
                 <td colspan='1'>Total:</td>
-                <td>\${$total}</td>
+                <td>{$total}</td>
               </tr>";
         echo "</table>";
     

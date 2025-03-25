@@ -17,7 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'price' => $item_price
     ];
 
-   
+    // Update the price to Indian Rupee (₹)
+    foreach ($_SESSION['cart'] as &$item) {
+        $item['price'] = '₹' . $item['price'];
+    }
+
     header('Location: burger.html');
     exit();
 }
