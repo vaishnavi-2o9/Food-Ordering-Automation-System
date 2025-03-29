@@ -22,7 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $item['price'] = '₹' . $item['price'];
     }
 
-    header('Location: burger.html');
-    exit();
+ // Display a popup
+echo '<script>';
+echo 'alert("Item added to cart successfully!\nItem: ' . $item_name . '\nPrice: ' . $item_price . '");';
+echo 'window.location.href = "burger.html";';
+echo '</script>';
+exit();
 }
 ?>
