@@ -63,15 +63,30 @@ session_start(); // Start the session
         echo "<tr>
                 <th>Food</th>
                 <th>Price</th>
+                <th>Quantity</th>
                 <th>Remove</th>
               </tr>";
         $total = 0; // Initialize total price
-
+        
         // Loop through each item in the cart
         foreach ($_SESSION['cart'] as $key => $item) {
+            // Ensure quantity key exists
+            if (!isset($_SESSION['cart'][$key]['quantity'])) {
+                $_SESSION['cart'][$key]['quantity'] = 1;
+            }
+        
+            $quantity = $_SESSION['cart'][$key]['quantity'];
             echo "<tr>
                     <td>{$item['name']}</td>
                     <td>\${$item['price']}</td>
+                    <td>
+                        <form action='update_quantity.php' method='post'>
+                            <input type='hidden' name='key' value='{$key}'>
+                            <button type='submit' name='action' value='decrease'>-</button>
+                            <span>{$quantity}</span>
+                            <button type='submit' name='action' value='increase'>+</button>
+                        </form>
+                    </td>
                     <td>
                         <form action='remove_item.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -79,9 +94,9 @@ session_start(); // Start the session
                         </form>
                     </td>
                   </tr>";
-            $total += $item['price']; // Add item price to the total
+            $total += $item['price'] * $quantity; // Add item price to the total
         }
-
+        
         echo "<tr>
                 <td colspan='1'>Total:</td>
                 <td>\${$total}</td>
