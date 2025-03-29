@@ -63,27 +63,26 @@ session_start(); // Start the session
         echo "<tr>
                 <th>Food</th>
                 <th>Price</th>
-                <th>Quantity</th>
+                <th> Quantity</th>
                 <th>Remove</th>
               </tr>";
         $total = 0; // Initialize total price
-        
+
         // Loop through each item in the cart
         foreach ($_SESSION['cart'] as $key => $item) {
-<<<<<<< HEAD
-            // Ensure quantity key exists
+            // Remove the '₹' symbol from the price
+            //$price = str_replace('₹', '', $item['price']);
             if (!isset($_SESSION['cart'][$key]['quantity'])) {
                 $_SESSION['cart'][$key]['quantity'] = 1;
             }
         
             $quantity = $_SESSION['cart'][$key]['quantity'];
-=======
-            // Remove the '₹' symbol from the price
-            $price = str_replace('₹', '', $item['price']);
->>>>>>> eda98c7b11f0b913fa8480b4472f4fb0bef69d26
+            $price = floatval(str_replace('₹', '', $item['price'])); 
             echo "<tr>
                     <td>{$item['name']}</td>
-                    <td>{$item['price']}</td>
+                    <td>₹" . number_format($price, 2) . "</td>
+                    
+
                     <td>
                         <form action='update_quantity.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -99,22 +98,17 @@ session_start(); // Start the session
                         </form>
                     </td>
                   </tr>";
-<<<<<<< HEAD
-            $total += $item['price'] * $quantity; // Add item price to the total
-        }
-        
-=======
-            $total += (int) $price; // Add item price to the total
+            //$total += (int) $price; // Add item price to the total
+            $total += $price * $quantity;
         }
 
         // Remove the '₹' symbol from the total price
-        $total = '₹' . $total;
->>>>>>> eda98c7b11f0b913fa8480b4472f4fb0bef69d26
+                
         echo "<tr>
-                <td colspan='1'>Total:</td>
-                <td>{$total}</td>
-              </tr>";
-        echo "</table>";
+        <td colspan='1'><strong>Total:</strong></td>
+        <td><strong>₹{$total}</strong></td>
+      </tr>";
+echo "</table>";
     
     }
               echo '<form action="menu.html" method="post">
