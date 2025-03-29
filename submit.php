@@ -39,13 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $key => $item) {
             $totalItems .= $item['name'] . ', ';
-            $totalPrize += $item['price'];
+            // Remove the '₹' symbol from the price
+            $price = str_replace('₹', '', $item['price']);
+            $totalPrize += (int) $price;
         }
         $totalItems = rtrim($totalItems, ', ');
-        $totalPrize = number_format($totalPrize, 2);
+        $totalPrize = number_format($totalPrize, 2); // Removed the '₹' symbol here
 
         echo "Total Items: $totalItems<br>";
-        echo "Total Prize: $totalPrize<br>";
+        echo "Total Prize: ₹$totalPrize<br>"; // Added the '₹' symbol here
 
         // Prepare the SQL query to insert the form data into the database
         $sql = "INSERT INTO users (customer_name, customer_number, total_items, total_prize, saved_at) VALUES (?, ?, ?, ?, NOW())";

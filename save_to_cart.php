@@ -42,7 +42,8 @@ function saveCartItems($conn, $cartItems) {
     }
 
     foreach ($cartItems as $key => $item) {
-        $itemPrice = number_format($item['price'], 2);
+        // Remove the '₹' symbol from the price
+        $itemPrice = str_replace('₹', '', $item['price']);
         $sql = "INSERT INTO cart (item_name, item_prize) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $item['name'], $itemPrice);

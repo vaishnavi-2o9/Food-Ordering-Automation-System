@@ -53,7 +53,7 @@ session_start(); // Start the session
     </style>
 </head>
 <body>
-    <?php
+<?php
     // Check if the cart is empty
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         echo "<h1>Your Cart is Empty</h1>";
@@ -70,15 +70,20 @@ session_start(); // Start the session
         
         // Loop through each item in the cart
         foreach ($_SESSION['cart'] as $key => $item) {
+<<<<<<< HEAD
             // Ensure quantity key exists
             if (!isset($_SESSION['cart'][$key]['quantity'])) {
                 $_SESSION['cart'][$key]['quantity'] = 1;
             }
         
             $quantity = $_SESSION['cart'][$key]['quantity'];
+=======
+            // Remove the '₹' symbol from the price
+            $price = str_replace('₹', '', $item['price']);
+>>>>>>> eda98c7b11f0b913fa8480b4472f4fb0bef69d26
             echo "<tr>
                     <td>{$item['name']}</td>
-                    <td>\${$item['price']}</td>
+                    <td>{$item['price']}</td>
                     <td>
                         <form action='update_quantity.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -94,12 +99,20 @@ session_start(); // Start the session
                         </form>
                     </td>
                   </tr>";
+<<<<<<< HEAD
             $total += $item['price'] * $quantity; // Add item price to the total
         }
         
+=======
+            $total += (int) $price; // Add item price to the total
+        }
+
+        // Remove the '₹' symbol from the total price
+        $total = '₹' . $total;
+>>>>>>> eda98c7b11f0b913fa8480b4472f4fb0bef69d26
         echo "<tr>
                 <td colspan='1'>Total:</td>
-                <td>\${$total}</td>
+                <td>{$total}</td>
               </tr>";
         echo "</table>";
     
