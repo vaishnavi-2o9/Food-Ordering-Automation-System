@@ -152,7 +152,7 @@ button:active {
 
 
 
-bbody {
+body {
   background-color: #f7f7f7;
 }
 
@@ -166,10 +166,10 @@ h2 {
 .cart-container {
   width: 450px;
   height: 400px;
-  position: absolute;
+  position: fixed;
   border-radius: 20px;
   left: 1%;
-  top: 2%;
+  bottom: 2%;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
