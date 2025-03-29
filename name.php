@@ -113,10 +113,11 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 } else {
    
     echo "<div class='cart-container'>";
-   echo "<h2> your cart</h2>";
+    echo "<h2> Your Cart</h2>";
     echo "<div class='cart-header'>";
     
     echo "<span>Food</span>";
+    echo "<span>Quantity</span>";
     echo "<span>Price</span>";
     echo "</div>";
 
@@ -125,11 +126,12 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     foreach ($_SESSION['cart'] as $key => $item) {
         echo "<div class='cart-item'>";
         echo "<span>{$item['name']}</span>";
+        echo "<span>{$item['quantity']}</span>";
         // Remove the '₹' symbol from the price
         $price = str_replace('₹', '', $item['price']);
         echo "<span>₹{$price}</span>";
         echo "</div>";
-        $total += intval($price); // Add item price to the total
+        $total += intval($price) * $item['quantity']; // Add item price to the total
     }
 
     echo "<div class='cart-total'>";
