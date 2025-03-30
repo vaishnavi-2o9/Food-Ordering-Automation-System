@@ -164,90 +164,80 @@ h2 {
 }
 
 .cart-container {
-  width: 450px;
-  height: 400px;
-  position: fixed;
+  width: 400px;
+  height:500 px;
+  position: absolute;
   border-radius: 20px;
   left: 1%;
-  bottom: 2%;
+  top: 2%;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: table;
 }
 
 /* Style the cart header */
 .cart-header {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 10px;
   border-bottom: 1px solid #5e5346;
   background-color: #f7f7f7;
 }
 
 /* Style the cart item */
 .cart-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 80px; /* Add space between columns */
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
 /* Style the cart total */
 .cart-total {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px; /* Add space between columns */
   padding: 10px;
   font-weight: bold;
   background-color: #f7f7f7;
+  
 }
 
 /* Style the cart item and total text */
 .cart-item span, .cart-total span {
-  width: 50%;
+  text-align: center;
+  
 }
 
 /* Style the cart bill slip */
 .cart-container {
   border: 1px solid #ddd;
   padding: 20px;
+  font-size: 1.3rem;
 }
 
 .cart-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0;
 }
-
-.cart-item img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
 .cart-item span {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .cart-total span {
   font-size: 1.5rem;
+  
 }
 
-/* Corrected color combination */
 .cart-container {
-  background-color: #fff;
+  border-collapse: collapse;
 }
 
-.cart-header {
-  background-color: #f7f7f7;
+.cart-header, .cart-item, .cart-total {
+  border: 1px solid #ddd;
 }
 
-.cart-total {
-  background-color: #f7f7f7;
-}
-
-.cart-item {
-  background-color: #fff;
-}
-
-.cart-item:hover {
-  background-color: #f7f7f7;
+.cart-header, .cart-item, .cart-total {
+  padding: 20px;
 }

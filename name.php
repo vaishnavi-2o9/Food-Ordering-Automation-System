@@ -28,7 +28,7 @@ session_start(); // Start the session
        
    
       
-
+        </form>
     <div class="keyboard" id="keyboard">
                 
         <div class="row one">
@@ -141,7 +141,7 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
     echo "</div>";
 }
 ?>
-</form>
+
 <script src="name.js"></script>
 </body>  
 </html>
