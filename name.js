@@ -84,25 +84,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-function validateForm() {
-    var customerName = document.getElementById('customer_name').value.trim();
-    var customerNumber = document.getElementById('customer_number').value.trim();
+// Get the form element
+const form = document.getElementById('order-form');
 
-    if (customerName === "") {
-        alert("Customer Name is required.");
-        return false;
-    }
+// Add an event listener to the form's submit event
+form.addEventListener('submit', (event) => {
+  // Prevent the default form submission behavior
+  event.preventDefault();
 
-    // Check if the customer number is empty or not a valid number
-    if (customerNumber === "" || !/^\d{10}$/.test(customerNumber)) {
-        alert("Please enter a valid 10-digit Customer Number.");
-        return false;
-    }
+  // Get the input values
+  const customerName = document.getElementById('customer_name').value.trim();
+  const customerNumber = document.getElementById('customer_number').value.trim();
 
-    return true;
-}
+  // Validate the input values
+  if (customerName === "") {
+    alert("Customer Name is required.");
+    return;
+  }
 
-//After Submit Button
-document.getElementById('newpage').addEventListener('click',function(){
-    window.open('index.php');
+  // Check if the customer number is empty or not a valid number
+  if (customerNumber === "" || !/^\d{10}$/.test(customerNumber)) {
+    alert("Please enter a valid 10-digit Customer Number.");
+    return;
+  }
+
+  // Open the next page after submission
+  window.open('index.php', '_self');
 });
