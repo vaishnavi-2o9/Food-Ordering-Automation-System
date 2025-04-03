@@ -14,6 +14,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check if the connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Database connection successful<br>";
 }
 
 // Check if the form has been submitted
@@ -52,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Bind the parameters
         $stmt->bind_param("sssss", $customerName, $customerNumber, $totalItems, $totalQuantity, $totalPrize);
+
+        // Print the query and values
+        echo "Query: $sql<br>";
+        echo "Values: $customerName, $customerNumber, $totalItems, $totalQuantity, $totalPrize<br>";
 
         // Execute the query
         if ($stmt->execute()) {

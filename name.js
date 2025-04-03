@@ -84,30 +84,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-// Get the form element
-const form = document.getElementById('order-form');
 
-// Add an event listener to the form's submit event
-form.addEventListener('submit', (event) => {
-  // Prevent the default form submission behavior
-  event.preventDefault();
-
-  // Get the input values
-  const customerName = document.getElementById('customer_name').value.trim();
-  const customerNumber = document.getElementById('customer_number').value.trim();
-
-  // Validate the input values
-  if (customerName === "") {
-    alert("Customer Name is required.");
-    return;
-  }
-
-  // Check if the customer number is empty or not a valid number
-  if (customerNumber === "" || !/^\d{10}$/.test(customerNumber)) {
-    alert("Please enter a valid 10-digit Customer Number.");
-    return;
-  }
-
-  // Open the next page after submission
-  window.open('index.php', '_self');
-});
