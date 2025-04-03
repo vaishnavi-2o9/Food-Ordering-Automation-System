@@ -33,5 +33,5 @@ function updateCartCount(count) {
 function payNow() {
     var newWindow = window.open("name.html", "_blank");
     newWindow.window.resizeTo(screen.width, screen.height);
-    newWindow.window.moveTo(0, 0);
-  }
+    newWindow.window.moveTo(0, 0);
+  }
