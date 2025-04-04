@@ -241,3 +241,30 @@ h2 {
 .cart-header, .cart-item, .cart-total {
   padding: 20px;
 }
+.order-type {
+  margin-bottom: 20px;
+}
+
+.order-type label {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #db7b0e;
+}
+
+.order-type input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.order-type input[type="checkbox"]:checked + label {
+  font-weight: bold;
+  color: #db7b0e;
+}
+
+.order-type input[type="checkbox"]:focus + label {
+  box-shadow: 0 0 5px #db7b0e;
+}
+
+.order-type input[type="checkbox"]:hover + label {
+  color: #db7b0e;
+}
