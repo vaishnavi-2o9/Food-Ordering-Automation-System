@@ -22,11 +22,14 @@ session_start(); // Start the session
         
         <label for="customer_number">Customer Number:</label>
         <input type="text" id="customer_number" name="customer_number" required><br><br>
-        <label for="order_type">Order Type:</label>
-        <input type="checkbox" id="dining_in" name="order-type" value="Dining In" required>
-        <label for="dining_in">Dining In</label>
-        <input type="checkbox" id="take_away" name="order-type" value="Take Away" required>
-        <label for="take_away">Take Away</label><br><br>
+       <h3>Order-type</h3>
+        <div class="order-type-container">
+ 
+  <input type="radio" id="dining_in" name="order-type" value="Dining In" required>
+  <label for="dining_in">Dining In</label>
+  <input type="radio" id="take_away" name="order-type" value="Take Away" required>
+  <label for="take_away">Take Away</label>
+</div>
         <div class="input_field">
             <input type="submit" id="newpage" value="submit" class="btn" name="submit">
         </div>

@@ -1,30 +1,37 @@
+/* Global Styles */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  
- 
-  background-repeat: no-repeat; /* don't repeat the image */
-  background-attachment: fixed; /* keep the image fixed when scrolling */
-  background-color: #f4f4f4; /* fallback color if image doesn't load */
+  background-color: #f7f7f7;
   margin: 0;
   padding: 0;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
-  color: #db7b0e; /* Use the specified color */
+  color: #db7b0e;
+}
+
+h1 {
   font-size: 3rem;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
 /* Form Styles */
+
 #order-form {
   background-color: #fff;
   padding: 20px 65px;
-  border-radius: 10px ;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
-  margin: 0 auto; /* Center the form horizontally */
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -47,7 +54,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: #db7b0e; /* Use the specified color */
+  border-color: #db7b0e;
   outline: none;
 }
 
@@ -56,7 +63,7 @@ input[type="text"]:focus {
 }
 
 input[type="submit"] {
-  background-color: #db7b0e; /* Use the specified color */
+  background-color: #db7b0e;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -67,105 +74,99 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #c56a0a; /* Darker shade for hover */
+  background-color: #c56a0a;
 }
 
+/* Keyboard Styles */
+
 .keyboard {
-  display: block;
+  
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100%; /* Full width */
-  padding: 10px; /* Optional padding */
+  width: 100%;
+  padding: 10px;
   background-color: transparent;
   box-shadow: 0 -2px 5px rgba(78, 76, 76, 0.2);
   backdrop-filter: blur(10px);
-  z-index: 2; /* Add this line */
+  z-index: 2;
 }
 
 .row {
-  display: flex; /* Use flexbox for rows */
-  justify-content: center; /* Center buttons in each row */
-  width: 100%; /* Full width */
-  margin: 10px 0; /* Margin between rows */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0;
 }
 
 button {
   color: #000;
-  width: 55px; /* Default button width */
-  height: 55px; /* Default button height */
+  width: 55px;
+  height: 55px;
   border: none;
   background: #db7b0e;
   box-shadow: 5px 5px 10px #474343, -5px -5px 10px #fff;
   font-size: 20px;
-  margin: 0 5px; /* Margin between buttons */
+  margin: 0 5px;
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 20%;
-  transition: box-shadow 0.2s; /* Smooth transition for active state */
+  transition: box-shadow 0.2s;
 }
 
 button:active {
   box-shadow: 1px 1px 2px #fff8f8, -1px -1px 2px #474343;
 }
 
+/* Button Variations */
+
 .back {
-  width: 115px; /* Backspace button width */
+  width: 115px;
   border-radius: 10px;
 }
 
 .tab {
-  width: 80px; /* Tab button width */
+  width: 80px;
   border-radius: 10px;
 }
 
 .slace {
-  width: 92px; /* Backslash button width */
+  width: 92px;
   border-radius: 10px;
 }
 
 .cap {
-  width: 100px; /* Corrected from 100x to 100px */
+  width: 100px;
   border-radius: 10px;
 }
 
 .ent-btn {
-  width: 135px; /* Enter button width */
+  width: 135px;
   border-radius: 10px;
 }
 
 .shift {
-  width: 150px; /* Shift button width */
+  width: 150px;
   border-radius: 10px;
 }
 
 .other {
-  width: 82px; /* Other modifier keys width */
+  width: 82px;
   border-radius: 10px;
 }
 
 .space {
-  width: 406px; /* Space button width */
+  width: 406px;
   border-radius: 10px;
 }
 
-
-
-body {
-  background-color: #f7f7f7;
-}
-
-h2 {
-  text-align: center;
-  color: #db7b0e;
-  font-size: 2rem;
-  margin-top: 50px;
-}
+/* Cart Styles */
 
 .cart-container {
   width: 400px;
-  height:500 px;
+  height: 500px;
   position: absolute;
   border-radius: 20px;
   left: 1%;
@@ -173,9 +174,9 @@ h2 {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: table;
+  border-collapse: collapse;
 }
 
-/* Style the cart header */
 .cart-header {
   display: flex;
   justify-content: space-between;
@@ -184,87 +185,74 @@ h2 {
   background-color: #f7f7f7;
 }
 
-/* Style the cart item */
 .cart-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 80px; /* Add space between columns */
+  grid-column-gap: 80px;
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
-/* Style the cart total */
 .cart-total {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 20px; /* Add space between columns */
+  grid-column-gap: 20px;
   padding: 10px;
   font-weight: bold;
   background-color: #f7f7f7;
-  
 }
 
-/* Style the cart item and total text */
 .cart-item span, .cart-total span {
   text-align: center;
-  
 }
 
-/* Style the cart bill slip */
-.cart-container {
-  border: 1px solid #ddd;
-  padding: 20px;
-  font-size: 1.3rem;
-}
-
-.cart-header h2 {
-  font-size: 1.3rem;
-  margin: 0;
-}
-.cart-item span {
+.cart-header h2, .cart-item span, .cart-total span {
   font-size: 1.3rem;
 }
 
 .cart-total span {
   font-size: 1.5rem;
-  
-}
-
-.cart-container {
-  border-collapse: collapse;
-}
-
-.cart-header, .cart-item, .cart-total {
-  border: 1px solid #ddd;
 }
 
 .cart-header, .cart-item, .cart-total {
   padding: 20px;
-}
-.order-type {
-  margin-bottom: 20px;
+  border: 1px solid #ddd;
 }
 
-.order-type label {
-  display: inline-block;
+
+
+.order-type-container {
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.order-type-container label {
+  display:inline-block;
   margin-right: 20px;
   font-weight: bold;
   color: #db7b0e;
 }
 
-.order-type input[type="checkbox"] {
+.order-type-container input[type="radio"] {
   margin-right: 10px;
+  display:inline-flex;
 }
 
-.order-type input[type="checkbox"]:checked + label {
+.order-type-container input[type="radio"]:checked + label {
   font-weight: bold;
   color: #db7b0e;
 }
 
-.order-type input[type="checkbox"]:focus + label {
+.order-type-container input[type="radio"]:focus + label {
   box-shadow: 0 0 5px #db7b0e;
 }
 
-.order-type input[type="checkbox"]:hover + label {
+.order-type-container input[type="radio"]:hover + label {
   color: #db7b0e;
 }
