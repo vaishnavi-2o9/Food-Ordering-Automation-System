@@ -63,38 +63,26 @@ session_start(); // Start the session
         echo "<tr>
                 <th>Food</th>
                 <th>Price</th>
-                <th>quantity</th>
+                <th> Quantity</th>
                 <th>Remove</th>
               </tr>";
         $total = 0; // Initialize total price
 
         // Loop through each item in the cart
         foreach ($_SESSION['cart'] as $key => $item) {
-<<<<<<< HEAD
-=======
             // Remove the '₹' symbol from the price
             //$price = str_replace('₹', '', $item['price']);
->>>>>>> 8b0ce4cfb16a0e4efa013179e6aaeec0d990c2e6
             if (!isset($_SESSION['cart'][$key]['quantity'])) {
                 $_SESSION['cart'][$key]['quantity'] = 1;
             }
-
-<<<<<<< HEAD
+        
             $quantity = $_SESSION['cart'][$key]['quantity'];
-    $price = floatval(str_replace('₹', '', $item['price']));
-
+            $price = floatval(str_replace('₹', '', $item['price'])); 
             echo "<tr>
-                     <td>{$item['name']}</td>
-            <td>₹" . number_format($price, 2) . "</td>
-            <td>
-                <form action='update_quantity.php' method='post'>
-                    <input type='hidden' name='key' value='{$key}'>
-                    <button type='submit' name='action' value='decrease'>-</button>
-                    <span>{$quantity}</span>
-                    <button type='submit' name='action' value='increase'>+</button>
-                </form>
-            </td>
-=======
+                    <td>{$item['name']}</td>
+                    <td>₹" . number_format($price, 2) . "</td>
+                    
+
                     <td>
                         <form action='update_quantity.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -103,7 +91,6 @@ session_start(); // Start the session
                             <button type='submit' name='action' value='increase'>+</button>
                         </form>
                     </td>
->>>>>>> 8b0ce4cfb16a0e4efa013179e6aaeec0d990c2e6
                     <td>
                         <form action='remove_item.php' method='post'>
                             <input type='hidden' name='key' value='{$key}'>
@@ -111,16 +98,6 @@ session_start(); // Start the session
                         </form>
                     </td>
                   </tr>";
-<<<<<<< HEAD
-                  $total += $price * $quantity; // Add item price to the total
-        }
-
-        echo "<tr>
-                <td colspan='1'>Total:</td>
-                <td>₹{$total}</td>
-              </tr>";
-        echo "</table>";
-=======
             //$total += (int) $price; // Add item price to the total
             $total += $price * $quantity;
         }
@@ -132,7 +109,6 @@ session_start(); // Start the session
         <td><strong>₹{$total}</strong></td>
       </tr>";
 echo "</table>";
->>>>>>> 8b0ce4cfb16a0e4efa013179e6aaeec0d990c2e6
     
     }
               echo '<form action="menu.html" method="post">
