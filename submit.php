@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->close();
 
             // Redirect to payment page
-            header("Location:index.php");
+            header("Location:payment.php");
             exit();
         } else {
             echo "Error inserting customer data: " . $stmt->error . "<br>";
