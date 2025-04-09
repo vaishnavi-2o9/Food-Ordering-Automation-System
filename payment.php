@@ -6,18 +6,6 @@ $apikey = "rzp_test_PZ3NaNPYN467Z2";
 ?>
 
 
-<button id="rzp-button" style="
-    background-color: #db7b0e;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-">
-    Pay Now
-</button>
 
 
 <form action="success.html" method="POST">

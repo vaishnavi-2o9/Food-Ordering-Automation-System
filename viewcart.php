@@ -102,7 +102,7 @@ session_start(); // Start the session
             $total += $price * $quantity;
         }
 
-        // Remove the '₹' symbol from the total price
+        
                 
         echo "<tr>
         <td colspan='1'><strong>Total:</strong></td>

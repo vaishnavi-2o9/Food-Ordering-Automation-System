@@ -15,7 +15,7 @@ session_start(); // Start the session
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <ah1>Food Factory</ah1>
+    <h1>Food Factory</h1>
     <form id="order-form" action="submit.php" method="POST">
         <label for="customer_name">Customer Name:</label>
         <input type="text" id="customer_name" name="customer_name" required><br><br>
