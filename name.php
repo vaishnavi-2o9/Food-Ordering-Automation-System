@@ -15,13 +15,21 @@ session_start(); // Start the session
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Food Factory</h1>
+    <ah1>Food Factory</ah1>
     <form id="order-form" action="submit.php" method="POST">
         <label for="customer_name">Customer Name:</label>
         <input type="text" id="customer_name" name="customer_name" required><br><br>
         
         <label for="customer_number">Customer Number:</label>
         <input type="text" id="customer_number" name="customer_number" required><br><br>
+       <h3>Order-type</h3>
+        <div class="order-type-container">
+ 
+  <input type="radio" id="dining_in" name="order-type" value="Dining In" required>
+  <label for="dining_in">Dining In</label>
+  <input type="radio" id="take_away" name="order-type" value="Take Away" required>
+  <label for="take_away">Take Away</label>
+</div>
         <div class="input_field">
             <input type="submit" id="newpage" value="submit" class="btn" name="submit">
         </div>

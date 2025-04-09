@@ -84,9 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
-// Get the form element
-const form = document.getElementById('order-form');
 
+<<<<<<< HEAD
 // Add an event listener to the form's submit event
 form.addEventListener('submit', (event) => {
   // Prevent the default form submission behavior
@@ -111,3 +110,5 @@ form.addEventListener('submit', (event) => {
   // Open the next page after submission
   window.open('payment.php', '_self');
 });
+=======
+>>>>>>> 8b0ce4cfb16a0e4efa013179e6aaeec0d990c2e6

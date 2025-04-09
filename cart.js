@@ -8,7 +8,7 @@ function showCart() {
 
         // Send an AJAX request to get the cart contents
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "viewcart.php", true);
+        xhr.open("GET", "update_quantity.php", true);
         xhr.onload = function () {
             if (xhr.status === 200) {
                 // Update the cart contents div with the received data
@@ -33,5 +33,5 @@ function updateCartCount(count) {
 function payNow() {
     var newWindow = window.open("name.html", "_blank");
     newWindow.window.resizeTo(screen.width, screen.height);
-    newWindow.window.moveTo(0, 0);
-  }
+    newWindow.window.moveTo(0, 0);
+  }

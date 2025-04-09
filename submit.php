@@ -14,6 +14,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check if the connection was successful
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Database connection successful<br>";
 }
 
 // Check if the form has been submitted
@@ -21,9 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get the form data
     $customerName = trim($_POST["customer_name"] ?? '');
     $customerNumber = trim($_POST["customer_number"] ?? '');
+    $orderType = trim($_POST["order-type"] ?? '');
 
     // Check if the form data is valid
-    if (empty($customerName) || empty($customerNumber)) {
+    if (empty($customerName) || empty($customerNumber) || empty($orderType)) {
         echo "Please fill in all fields.";
         exit();
     }
@@ -45,13 +48,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $totalPrize = $total; // Save the total price
 
         // Prepare the SQL query to insert the form data into the database
-        $sql = "INSERT INTO users (customer_name, customer_number, total_items, total_quantity, total_prize, saved_at) VALUES (?, ?, ?, ?, ?, NOW())";
+        $sql = "INSERT INTO users (customer_name, customer_number, order_type, total_items, total_quantity, total_prize, saved_at) VALUES (?, ?, ?, ?, ?, ?, NOW())";
 
         // Prepare the statement
         $stmt = $conn->prepare($sql);
 
         // Bind the parameters
-        $stmt->bind_param("sssss", $customerName, $customerNumber, $totalItems, $totalQuantity, $totalPrize);
+        $stmt->bind_param("ssssss", $customerName, $customerNumber, $orderType, $totalItems, $totalQuantity, $totalPrize);
+
+        // Print the query and values
+        echo "Query: $sql<br>";
+        echo "Values: $customerName, $customerNumber, $orderType, $totalItems, $totalQuantity, $totalPrize<br>";
 
         // Execute the query
         if ($stmt->execute()) {
