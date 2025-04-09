@@ -1,3 +1,4 @@
+
 .background {
     background-image: url('background.jpg'); /* Replace with your image path */
    
@@ -72,12 +73,8 @@ h2{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Button Variants */
-.btn-primary {
-    background-color: #0eabdb;
-    color: #fff;
-    border: 2px solid #f2f2f2;
-}
+
+
 
 .btn-secondary {
     background-color: #db7b0e;
@@ -85,30 +82,22 @@ h2{
     border: 2px solid #f2f2f2;
 }
 
-/* Button Hover and Active States */
-.btn-primary:hover {
-    background-color: #1a5dbc;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+
 
 .btn-secondary:hover {
-    background-color: #c0392b;
+    background-color: #f0850a;
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn-primary:active {
-    background-color: #1a5dbc;
+
+
+.btn-secondary:active {
+    background-color: #fa8805;
     transform: scale(0.9);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-secondary:active {
-    background-color: #8e44ad;
-    transform: scale(0.9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 /* Icon Styles */
 .icon {
@@ -136,4 +125,6 @@ h2{
     animation: pulse 2s infinite;
 }
 
-
+#voice-assistant {
+    display: none;
+}

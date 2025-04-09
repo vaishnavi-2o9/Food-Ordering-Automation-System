@@ -46,7 +46,7 @@ function saveCartItems($conn, $cartItems) {
         $itemPrice = str_replace('₹', '', $item['price']);
         $sql = "INSERT INTO cart (item_name, item_prize, item_quantity) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $item['name'], $itemPrice, $item['quantity']);
+        $stmt->bind_param("sii", $item['name'], $itemPrice, $item['quantity']);
         if ($stmt->execute()) {
             echo "Cart item saved successfully";
         } else {
@@ -68,6 +68,7 @@ try {
 
 $conn->close();
 
+// Redirect to name.php after saving cart items
 header('Location: name.php');
 exit();
 ?>
