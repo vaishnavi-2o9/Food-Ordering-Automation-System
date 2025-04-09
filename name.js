@@ -109,5 +109,5 @@ form.addEventListener('submit', (event) => {
   }
 
   // Open the next page after submission
-  window.open('index.php', '_self');
+  window.open('payment.php', '_self');
 });
