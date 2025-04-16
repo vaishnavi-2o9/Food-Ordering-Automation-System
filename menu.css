@@ -41,7 +41,7 @@ margin-left: 84%;
   align-items: flex-start; 
   gap: 20px; 
   flex-wrap: wrap; 
-  width: 65%; 
+  width: 76%; 
   position: absolute; 
   top: 180px; 
   right: 20px; 
@@ -57,7 +57,7 @@ margin-left: 84%;
   padding: 10px; 
   background-color: #f9f9f9; 
   transition: transform 0.2s; 
-  width: 210px; 
+  width: 190px; 
 }
 
 .dishes-image img {
@@ -94,76 +94,168 @@ margin-left: 84%;
     width: 90%; 
   }
 }
-.menu {
-  width:410px; 
-  background-color: #111; 
-  padding: 20px; 
-  position: fixed; 
-  top: 0; 
+.sidebar {
+  position: fixed;
+  top: 0;
   left: 0;
-  height: 100%; 
-  overflow-y: auto; 
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
- 
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  overflow-y: auto;
+  perspective: 1000px;
 }
 
-.menu h2 {
-  text-align: center; 
-  margin-bottom: 20px; 
-}
-
-.menu ul {
-  list-style-type: none; 
-  padding: 0; 
-}
-
-.menu li {
-  margin: 10px 0; 
-  transition: transform 0.3s ease; 
-}
-
-.Menu-item {
-  display: flex; 
-  align-items: center; 
-  text-decoration: none; 
-  color: #fff; 
-  transition: background-color 0.3s ease; 
-}
-
-.Menu-image {
-  width: 100px; 
-  height: auto; 
-  transition: transform 0.3s ease; 
-}
-
-.Menu-text {
-  margin-left: 10px; 
-  font-size: 18px; 
-}
-
-/* Hover effects */
-.menu li:hover {
-  transform: scale(1.05); 
-}
-
-.Menu-item:hover .Menu-image {
-  transform: scale(1.1); 
-}
-
-.Menu-item:hover {
-  background-color: #db7b0e; 
-  border-radius: 5px;
-}
-body {
+.sidebar ul {
+  list-style: none;
   margin: 0;
-  font-family: Arial, sans-serif; 
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 20px;
+}
+
+.sidebar-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transform: rotateY(0deg);
+}
+
+.sidebar-item:hover {
+  transform: rotateY(180deg);
+}
+
+.sidebar-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  backface-visibility: hidden;
+}
+
+.sidebar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+.sidebar-item .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.sidebar-item:hover .back {
+  transform: rotateY(0deg);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sidebar a:hover {
+  color: #ccc;
+}
+
+.sidebar .active {
+  background-color: #555;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.sidebar .active a {
+  color: #fff;
+}
+
+.sidebar .active:hover {
+  background-color: #666;
+}
+
+/* Hide and show functionality */
+.sidebar-hide {
+  transform: translateX(-250px);
+}
+
+.sidebar-show {
+  transform: translateX(0);
+}
+
+/* Scrollbar styles */
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+/* 3D card effect */
+.sidebar-item {
+  transform: rotateY(0deg);
+  transition: transform 0.5s;
+}
+
+.sidebar-item:hover {
+  transform: rotateY(180deg);
+}
+
+.sidebar-item .back {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.sidebar-item:hover .back {
+  transform: rotateY(0deg);
+}
+
+/* Add this to make the image flip */
+.sidebar-image {
+  transform: rotateY(0deg);
+  transition: transform 0.5s;
+}
+
+.sidebar-item:hover .sidebar-image {
+  transform: rotateY(180deg);
 }
 
 .header-controls {
   position: fixed; 
   top: 0; 
   right: 0; 
-  width: 66%; 
+  width: 77%; 
   background-color: #111; 
   padding: 10px; 
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); 
@@ -201,24 +293,6 @@ body {
 .details {
   display: block; 
   margin-top: 5px; 
-}
-
-/* Additional styles for the back button and search container */
-.back-button {
-  position: fixed; 
-  top: 80px; 
-  right: 40px; 
-  padding: 10px 15px; 
-  border: none; 
-  background-color: #007BFF; 
-  color: white; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  z-index: 1000;
-}
-
-.back-button:hover {
-  background-color: #0056b3; 
 }
 
 .search-container {
