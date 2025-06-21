@@ -1,271 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Payment Successful</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* Global Styles */
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #2c3e50;
-      text-align: center;
-      overflow: hidden;
       margin: 0;
       padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    /* Success Container Styles */
-    .success-container {
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #db7b0e33 10%, transparent 60%), radial-gradient(circle, #ffffff22 10%, transparent 60%);
+      animation: rotateBg 20s linear infinite;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    @keyframes rotateBg {
+      0% { transform: rotate(0deg) scale(1); }
+      100% { transform: rotate(360deg) scale(1.1); }
+    }
+
+    .container {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #fff;
+      width: 360px;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 300px;
-      height: 300px;
-      border: 1px solid #ddd;
-    }
-
-    /* Success Icon Styles */
-    .success-icon {
-      width: 120px;
-      height: 120px;
-      background-color: #db7b0e;
-      border-radius: 50%;
-      margin: 0 auto;
-      position: relative;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .success-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40px;
-      height: 20px;
-      border-left: 6px solid white;
-      border-bottom: 6px solid white;
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    /* Message Styles */
-    .message {
-      font-size: 24px;
-      color: #333;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    /* Button Styles */
-    .button {
-      background-color: #db7b0e;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .button:hover {
-      background-color: #db7b0e;
-    }
-
-    /* Confetti Styles */
-    .confetti {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    .confetti-piece {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #db7b0e;
-      opacity: 0.8;
-      animation: fall 3s linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Payment Successful</title>
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #e74f12;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px #db7b0e88, inset 0 0 80px #db7b0e22;
       text-align: center;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
     }
 
-    /* Success Container Styles */
-    .success-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 300px;
-      height: 300px;
-      border: 1px solid #ddd;
-    }
-
-    /* Success Icon Styles */
-    .success-icon {
+    .circle-wrapper {
       width: 120px;
       height: 120px;
-      background-color: #db7b0e;
+      margin: 0 auto 30px;
+      animation: wheelRotate 1.8s ease-out forwards;
+    }
+
+    @keyframes wheelRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .circle {
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      margin: 0 auto;
+      background: linear-gradient(145deg, #db7b0e, #f3a638);
+      box-shadow: 0 0 25px #db7b0e, inset 0 0 15px #ffffffaa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .success-icon::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40px;
-      height: 20px;
-      border-left: 6px solid white;
-      border-bottom: 6px solid white;
-      transform: translate(-50%, -50%) rotate(-45deg);
+    .checkmark {
+      width: 60px;
+      height: 60px;
+      opacity: 0;
+      animation: fadeInCheck 1.2s ease-out 1s forwards;
+      clip-path: inset(0 100% 0 0);
     }
 
-    /* Message Styles */
-    .message {
-      font-size: 24px;
-      color: #333;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    /* Button Styles */
-    .button {
-      background-color: #db7b0e;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .button:hover {
-      background-color: #db7b0e;
-    }
-
-    /* Confetti Styles */
-    .confetti {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    .confetti-piece {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: #db7b0e;
-      opacity: 0.8;
-      animation: fall 3s linear infinite;
-    }
-
-    @keyframes fall {
+    @keyframes fadeInCheck {
       0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
       }
       100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
       }
+    }
+
+    .checkmark svg {
+      width: 100%;
+      height: 100%;
+      stroke: #fff;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 0 0 10px #db7b0e;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+     .btn {
+      background: #db7b0e;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #db7b0e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.2);
+      transform: skewX(-45deg);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover::before {
+      left: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="confetti" id="confetti"></div>
 
-  <div class="success-container">
-    <div class="success-icon"></div>
-    <div class="message">Your payment is successful. Thanks for ordering!</div>
-    <button class="button">Thank You!</button>
+<div class="container">
+  <div class="circle-wrapper">
+    <div class="circle">
+      <div class="checkmark">
+        <svg viewBox="0 0 52 52">
+          <path d="M14 27 L22 35 L38 18" />
+        </svg>
+      </div>
+    </div>
   </div>
+  <h1>Payment Successful</h1>
+  <p>Your payment was successful. Thank you.</p>
+ <button class="btn" onclick="location.href='dinning.html'">Return to dinning! </button>
 
-  <script>
-    // Automatically speak when the page loads
-    window.addEventListener('load', function() {
-      var speech = new SpeechSynthesisUtterance();
-      speech.text = 'Your payment is successful. Thanks for ordering!';
-      speech.lang = 'en-US';
-      speech.volume = 1;
-      speech.rate = 1;
-      speech.pitch = 1;
+</div>
 
-      // Get the list of available voices
-      var voices = window.speechSynthesis.getVoices();
+<script>
+  window.addEventListener('load', () => {
+    const msg = new SpeechSynthesisUtterance("Your payment was successful. Thanks for Ordering.");
+    msg.lang = 'en-US';
+    msg.volume = 1;
+    msg.pitch = 1;
+    msg.rate = 1;
+    const voices = speechSynthesis.getVoices();
+    if (voices.length) msg.voice = voices.find(v => v.name.toLowerCase().includes('male')) || voices[0];
+    speechSynthesis.speak(msg);
+  });
+</script>
 
-      // Find a male voice
-      var maleVoice = voices.find(voice => voice.name.includes('Male'));
-
-      // If a male voice is found, set it as the voice for the speech
-      if (maleVoice) {
-        speech.voice = maleVoice;
-      }
-
-      // Wait for the voices to be loaded before speaking
-      if (speechSynthesis.getVoices().length === 0) {
-        speechSynthesis.onvoiceschanged = function() {
-          window.speechSynthesis.speak(speech);
-        };
-      } else {
-        window.speechSynthesis.speak(speech);
-      }
-    });
-    </script></body>
+</body>
 </html>
