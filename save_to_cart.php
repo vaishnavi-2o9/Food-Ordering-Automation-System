@@ -1,15 +1,19 @@
 <?php
 session_start();
 
+
 // Enable error reporting (for development only)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+
 
 // Database connection credentials
 $servername = "localhost";
 $username = "root";
 $password = ""; // Change this if your root has a password
 $dbname = "customer";
+
 
 // Create database connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,6 +24,20 @@ if ($conn->connect_error) {
 }
 
 // Function to check if the 'cart' table has required columns
+
+try {
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        throw new Exception("Connection failed: " . $conn->connect_error);
+    }
+} catch (mysqli_sql_exception $e) {
+    echo "Database connection error: " . $e->getMessage();
+    exit();
+}
+// Check the table structure
+
 function checkTableStructure($conn, $tableName) {
     $sql = "DESCRIBE `$tableName`";
     $result = $conn->query($sql);
